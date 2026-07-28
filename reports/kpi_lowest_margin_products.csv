@@ -1,0 +1,6 @@
+product_id,product_name,category,total_revenue,total_profit,margin_pct
+P0006,Ergo Office Chair,Office Supplies,4715852.15,1053993.95,22.35
+P0017,Lounge Sofa,Furniture,6591836.73,1890225.72,28.68
+P0007,Standing Desk,Office Supplies,1249607.62,365731.78,29.27
+P0003,4K Monitor,Electronics,2037401.79,804665.39,39.49
+P0013,Security Suite License,Software,1044796.79,448491.59,42.93

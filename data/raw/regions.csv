@@ -1,0 +1,12 @@
+region_id,region_name,country
+R01,North America,USA
+R02,North America,Canada
+R03,Europe,Germany
+R04,Europe,United Kingdom
+R05,Europe,France
+R06,Asia Pacific,India
+R07,Asia Pacific,Australia
+R08,Asia Pacific,Japan
+R09,Latin America,Brazil
+R10,Latin America,Mexico
+R00,Unknown / Unassigned,N/A

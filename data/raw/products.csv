@@ -1,0 +1,23 @@
+product_id,product_name,category,unit_cost,unit_price
+P0001,Laptop Pro 14,Electronics,530.88,1184.23
+P0002,Wireless Mouse,Electronics,104.51,239.03
+P0003,4K Monitor,Electronics,189.07,329.69
+P0004,Mechanical Keyboard,Electronics,666.46,1701.98
+P0005,Noise-Cancel Headphones,Electronics,244.21,483.19
+P0006,Ergo Office Chair,Office Supplies,566.15,769.69
+P0007,Standing Desk,Office Supplies,143.86,213.28
+P0008,Desk Lamp,Office Supplies,577.73,1292.98
+P0009,Whiteboard,Office Supplies,98.96,207.23
+P0010,Filing Cabinet,Office Supplies,162.22,407.06
+P0011,Analytics Suite License,Software,323.42,612.61
+P0012,Cloud Backup Plan,Software,628.42,1402.52
+P0013,Security Suite License,Software,99.6,183.15
+P0014,Design Studio License,Software,742.4,1773.38
+P0015,Bookshelf Unit,Furniture,477.22,1099.41
+P0016,Conference Table,Furniture,368.65,794.81
+P0017,Lounge Sofa,Furniture,765.61,1129.3
+P0018,Storage Cabinet,Furniture,406.58,808.88
+P0019,USB-C Hub,Accessories,53.13,133.67
+P0020,Laptop Sleeve,Accessories,673.47,1298.32
+P0021,Webcam HD,Accessories,414.04,1034.07
+P0022,Portable SSD 1TB,Accessories,154.1,316.23

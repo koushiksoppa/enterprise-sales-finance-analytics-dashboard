@@ -1,0 +1,50 @@
+// ============================================================
+// calculated_columns.dax
+// Calculated columns to add in Power BI Desktop (Modeling > New Column)
+// ============================================================
+
+// ---------- DimCustomer ----------
+DimCustomer[Customer Tenure (Months)] =
+DATEDIFF ( DimCustomer[signup_date], TODAY (), MONTH )
+
+DimCustomer[Customer Tier] =
+SWITCH (
+    TRUE (),
+    DimCustomer[segment] = "Enterprise", "Tier 1",
+    DimCustomer[segment] = "Government", "Tier 1",
+    DimCustomer[segment] = "SMB", "Tier 2",
+    "Tier 3"
+)
+
+// ---------- DimProduct ----------
+DimProduct[Price Band] =
+SWITCH (
+    TRUE (),
+    DimProduct[unit_price] >= 500, "Premium",
+    DimProduct[unit_price] >= 150, "Mid-Range",
+    "Budget"
+)
+
+DimProduct[Margin Band] =
+SWITCH (
+    TRUE (),
+    DimProduct[margin_pct] >= 0.45, "High Margin",
+    DimProduct[margin_pct] >= 0.25, "Standard Margin",
+    "Low Margin"
+)
+
+// ---------- DimDate ----------
+DimDate[Month-Year] =
+FORMAT ( DimDate[full_date], "MMM YYYY" )
+
+DimDate[Quarter Label] =
+"Q" & DimDate[quarter] & " " & DimDate[year]
+
+// ---------- FactSales ----------
+FactSales[Order Size Category] =
+SWITCH (
+    TRUE (),
+    FactSales[quantity] >= 8, "Bulk Order",
+    FactSales[quantity] >= 3, "Standard Order",
+    "Single Item"
+)

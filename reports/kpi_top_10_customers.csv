@@ -1,0 +1,11 @@
+customer_id,customer_name,segment,total_revenue,total_orders
+C00241,Ava Garcia,Enterprise,338727.3,56
+C00019,Olivia Dubois,Enterprise,334890.02,55
+C00498,James Johnson,SMB,316895.09,52
+C00411,Lucas Brown,SMB,316101.6,50
+C00242,Wei Brown,Enterprise,312848.52,47
+C00345,Liam Smith,Enterprise,312063.38,54
+C00380,Emma Kumar,Enterprise,310959.95,51
+C00396,Sofia Kumar,Enterprise,310080.21,61
+C00022,Sofia Novak,Consumer,305272.59,48
+C00384,James Wang,SMB,303281.38,41

@@ -1,0 +1,31 @@
+{
+  "name": "Enterprise Sales & Finance Theme",
+  "dataColors": [
+    "#0B3C5D", "#1D8A99", "#328CC1", "#73A9AD",
+    "#D9B44A", "#E37B40", "#B03A2E", "#6C7A89"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#0B0C10",
+  "tableAccent": "#0B3C5D",
+  "good": "#1D8A99",
+  "neutral": "#D9B44A",
+  "bad": "#B03A2E",
+  "maximum": "#0B3C5D",
+  "center": "#D9B44A",
+  "minimum": "#E37B40",
+  "null": "#B0B0B0",
+  "textClasses": {
+    "callout": { "fontSize": 32, "fontFace": "Segoe UI Semibold", "color": "#0B3C5D" },
+    "title": { "fontSize": 14, "fontFace": "Segoe UI Semibold", "color": "#0B0C10" },
+    "header": { "fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#0B3C5D" },
+    "label": { "fontSize": 10, "fontFace": "Segoe UI", "color": "#333333" }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#FFFFFF" } }, "transparency": 0 }],
+        "border": [{ "show": true, "color": { "solid": { "color": "#E6E6E6" } }, "radius": 6 }]
+      }
+    }
+  }
+}

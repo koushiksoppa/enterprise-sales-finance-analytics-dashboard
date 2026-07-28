@@ -1,0 +1,23 @@
+product_id,product_name,category,unit_cost,unit_price,margin_pct
+P0001,Laptop Pro 14,Electronics,530.88,1184.23,0.5517
+P0002,Wireless Mouse,Electronics,104.51,239.03,0.5628
+P0003,4K Monitor,Electronics,189.07,329.69,0.4265
+P0004,Mechanical Keyboard,Electronics,666.46,1701.98,0.6084
+P0005,Noise-Cancel Headphones,Electronics,244.21,483.19,0.4946
+P0006,Ergo Office Chair,Office Supplies,566.15,769.69,0.2644
+P0007,Standing Desk,Office Supplies,143.86,213.28,0.3255
+P0008,Desk Lamp,Office Supplies,577.73,1292.98,0.5532
+P0009,Whiteboard,Office Supplies,98.96,207.23,0.5225
+P0010,Filing Cabinet,Office Supplies,162.22,407.06,0.6015
+P0011,Analytics Suite License,Software,323.42,612.61,0.4721
+P0012,Cloud Backup Plan,Software,628.42,1402.52,0.5519
+P0013,Security Suite License,Software,99.6,183.15,0.4562
+P0014,Design Studio License,Software,742.4,1773.38,0.5814
+P0015,Bookshelf Unit,Furniture,477.22,1099.41,0.5659
+P0016,Conference Table,Furniture,368.65,794.81,0.5362
+P0017,Lounge Sofa,Furniture,765.61,1129.3,0.322
+P0018,Storage Cabinet,Furniture,406.58,808.88,0.4974
+P0019,USB-C Hub,Accessories,53.13,133.67,0.6025
+P0020,Laptop Sleeve,Accessories,673.47,1298.32,0.4813
+P0021,Webcam HD,Accessories,414.04,1034.07,0.5996
+P0022,Portable SSD 1TB,Accessories,154.1,316.23,0.5127

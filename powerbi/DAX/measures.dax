@@ -1,0 +1,157 @@
+// ============================================================
+// measures.dax
+// DAX measures for the Enterprise Sales & Finance Analytics model.
+// Paste each measure into Power BI Desktop:
+//   Modeling > New Measure  (create in the FactSales table)
+// Assumes relationships: FactSales[date_id] -> DimDate[date_id],
+//   FactSales[customer_id] -> DimCustomer[customer_id],
+//   FactSales[product_id] -> DimProduct[product_id],
+//   DimCustomer[region_id] -> DimRegion[region_id]
+// ============================================================
+
+// ---------- CORE KPIs ----------
+
+Total Revenue =
+SUM ( FactSales[net_revenue] )
+
+Total Profit =
+SUM ( FactSales[profit] )
+
+Total Cost =
+SUM ( FactSales[total_cost] )
+
+Total Orders =
+DISTINCTCOUNT ( FactSales[order_id] )
+
+Total Units Sold =
+SUM ( FactSales[quantity] )
+
+Profit Margin % =
+DIVIDE ( [Total Profit], [Total Revenue], 0 )
+
+Average Order Value =
+DIVIDE ( [Total Revenue], [Total Orders], 0 )
+
+Total Customers =
+DISTINCTCOUNT ( FactSales[customer_id] )
+
+Active Products =
+DISTINCTCOUNT ( FactSales[product_id] )
+
+// ---------- TIME INTELLIGENCE ----------
+// Requires DimDate marked as Date Table, DimDate[full_date] as the Date column.
+
+Revenue PY =
+CALCULATE ( [Total Revenue], SAMEPERIODLASTYEAR ( DimDate[full_date] ) )
+
+Revenue YoY % =
+DIVIDE ( [Total Revenue] - [Revenue PY], [Revenue PY], 0 )
+
+Revenue MTD =
+TOTALMTD ( [Total Revenue], DimDate[full_date] )
+
+Revenue QTD =
+TOTALQTD ( [Total Revenue], DimDate[full_date] )
+
+Revenue YTD =
+TOTALYTD ( [Total Revenue], DimDate[full_date] )
+
+Revenue Prior Month =
+CALCULATE ( [Total Revenue], DATEADD ( DimDate[full_date], -1, MONTH ) )
+
+Sales Growth MoM % =
+DIVIDE ( [Total Revenue] - [Revenue Prior Month], [Revenue Prior Month], 0 )
+
+Rolling 3M Revenue =
+CALCULATE (
+    [Total Revenue],
+    DATESINPERIOD ( DimDate[full_date], MAX ( DimDate[full_date] ), -3, MONTH )
+)
+
+// ---------- CUSTOMER ANALYTICS ----------
+
+New Customers =
+CALCULATE (
+    DISTINCTCOUNT ( DimCustomer[customer_id] ),
+    USERELATIONSHIP ( DimCustomer[signup_date], DimDate[full_date] )
+)
+// NOTE: create an inactive relationship DimCustomer[signup_date] -> DimDate[full_date]
+// in the model view, then this measure activates it for New Customers by period.
+
+Customer Growth % =
+VAR CurrentCustomers = DISTINCTCOUNT ( FactSales[customer_id] )
+VAR PriorCustomers =
+    CALCULATE ( DISTINCTCOUNT ( FactSales[customer_id] ), SAMEPERIODLASTYEAR ( DimDate[full_date] ) )
+RETURN
+    DIVIDE ( CurrentCustomers - PriorCustomers, PriorCustomers, 0 )
+
+Repeat Customer Rate =
+VAR CustomersWithMultipleOrders =
+    COUNTROWS (
+        FILTER (
+            VALUES ( FactSales[customer_id] ),
+            CALCULATE ( DISTINCTCOUNT ( FactSales[order_id] ) ) > 1
+        )
+    )
+RETURN
+    DIVIDE ( CustomersWithMultipleOrders, [Total Customers], 0 )
+
+// ---------- INVENTORY ANALYTICS ----------
+
+Total Stock On Hand =
+SUM ( DimInventory[stock_quantity] )
+
+Products Needing Reorder =
+CALCULATE ( DISTINCTCOUNT ( DimInventory[product_id] ), DimInventory[needs_reorder] = TRUE () )
+
+Inventory Turnover Ratio =
+DIVIDE ( [Total Units Sold], [Total Stock On Hand], 0 )
+
+// ---------- RANKING / TOP-N ----------
+
+Product Revenue Rank =
+RANKX ( ALL ( DimProduct[product_name] ), [Total Revenue], , DESC, DENSE )
+
+Customer Revenue Rank =
+RANKX ( ALL ( DimCustomer[customer_name] ), [Total Revenue], , DESC, DENSE )
+
+Region Revenue Rank =
+RANKX ( ALL ( DimRegion[region_name] ), [Total Revenue], , DESC, DENSE )
+
+// ---------- CONDITIONAL FORMATTING / KPI STATUS ----------
+
+Margin Status =
+VAR M = [Profit Margin %]
+RETURN
+    SWITCH (
+        TRUE (),
+        M >= 0.35, "Healthy",
+        M >= 0.20, "Watch",
+        "At Risk"
+    )
+
+Revenue KPI Icon =
+VAR YoY = [Revenue YoY %]
+RETURN
+    SWITCH ( TRUE (), YoY > 0, "▲", YoY < 0, "▼", "▬" )
+
+// ---------- FORECAST DASHBOARD SUPPORT ----------
+// Pairs with Power BI's built-in Analytics > Forecast on a line chart,
+// or a linear-trend measure for a simple in-DAX projection:
+
+Revenue 3M Moving Avg =
+AVERAGEX (
+    DATESINPERIOD ( DimDate[full_date], MAX ( DimDate[full_date] ), -3, MONTH ),
+    [Total Revenue]
+)
+
+Linear Trend Revenue =
+VAR MonthIndex = DATEDIFF ( MIN ( DimDate[full_date] ), MAX ( DimDate[full_date] ), MONTH )
+VAR Slope =
+    DIVIDE (
+        SUMX ( VALUES ( DimDate[month] ), ( DimDate[month] - AVERAGE ( DimDate[month] ) ) * [Total Revenue] ),
+        SUMX ( VALUES ( DimDate[month] ), ( DimDate[month] - AVERAGE ( DimDate[month] ) ) ^ 2 ),
+        0
+    )
+RETURN
+    [Total Revenue] + Slope * MonthIndex
