@@ -48,7 +48,10 @@ SERIES = [
 
 TEAL = SERIES[1]
 
-FONT_STACK = "Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif"
+# Multi-word family names are quoted: unquoted works in every current browser
+# but is fragile in stricter SVG consumers (Inkscape, some PDF converters).
+FONT_STACK = ("'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', "
+              "Arial, sans-serif")
 
 # Margin bands. The same thresholds drive the `Margin Status` DAX measure, so
 # a product flagged "At Risk" in the report is flagged "At Risk" in Power BI.

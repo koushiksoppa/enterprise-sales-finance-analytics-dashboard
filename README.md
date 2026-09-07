@@ -27,23 +27,48 @@ implementations of each KPI in agreement.
 
 Every page answers one question and is laid out on the same grid.
 
-| Page | Question it answers | Preview |
-|---|---|---|
-| Executive Dashboard | How is the business performing? | [view](screenshots/executive_dashboard.svg) |
-| Sales Analytics | Where are sales coming from and what drives them? | [view](screenshots/sales_analytics.svg) |
-| Financial Analytics | Are we growing profitably? | [view](screenshots/financial_analytics.svg) |
-| Customer Analytics | Who are our customers and how do they behave? | [view](screenshots/customer_analytics.svg) |
-| Inventory Analytics | Where are we exposed to inventory risk? | [view](screenshots/inventory_analytics.svg) |
-| Forecast Dashboard | What is likely to happen next? | [view](screenshots/forecast_dashboard.svg) |
+| Page | Question it answers |
+|---|---|
+| Executive Dashboard | How is the business performing? |
+| Sales Analytics | Where are sales coming from and what drives them? |
+| Financial Analytics | Are we growing profitably? |
+| Customer Analytics | Who are our customers and how do they behave? |
+| Inventory Analytics | Where are we exposed to inventory risk? |
+| Forecast Dashboard | What is likely to happen next? |
 
 All six share a navigation bar, a synced slicer strip (year, region, category,
 segment), bookmark presets, drill-through to a product detail page, and report
 page tooltips.
 
-<p align="center">
-  <img src="screenshots/financial_analytics.svg" width="49%" alt="Financial Analytics">
-  <img src="screenshots/forecast_dashboard.svg" width="49%" alt="Forecast Dashboard">
-</p>
+<details>
+<summary><b>Sales Analytics</b> — trend and 3-month average, AOV by category, top products, region and segment mix</summary>
+
+![Sales Analytics](screenshots/sales_analytics.svg)
+</details>
+
+<details>
+<summary><b>Financial Analytics</b> — profit trend, margin by category against the 35% healthy band, lowest-margin products with status</summary>
+
+![Financial Analytics](screenshots/financial_analytics.svg)
+</details>
+
+<details>
+<summary><b>Customer Analytics</b> — base growth, revenue by segment, top customers, revenue per customer</summary>
+
+![Customer Analytics](screenshots/customer_analytics.svg)
+</details>
+
+<details>
+<summary><b>Inventory Analytics</b> — stock against reorder level, turnover by product, replenishment watchlist</summary>
+
+![Inventory Analytics](screenshots/inventory_analytics.svg)
+</details>
+
+<details>
+<summary><b>Forecast Dashboard</b> — actuals, trend, moving average and a six-month projection with its range</summary>
+
+![Forecast Dashboard](screenshots/forecast_dashboard.svg)
+</details>
 
 The previews are rendered from the KPI tables by
 `python/build_dashboard_previews.py`, on the same 1280×720 canvas Power BI uses,
