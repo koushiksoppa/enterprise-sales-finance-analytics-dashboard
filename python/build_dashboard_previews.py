@@ -70,6 +70,18 @@ def truncate(text: str, max_px: float, size: float) -> str:
     return text if len(text) <= limit else text[: max(1, limit - 1)] + "…"
 
 
+def _cls(fill=None, stroke=None) -> str:
+    """Tag an element with the tokens it uses, so the embedded dark-mode
+    stylesheet can recolour it. Plain hex strings produce no class and stay
+    fixed across themes."""
+    names = []
+    if isinstance(fill, t.Tone):
+        names.append(f"f-{fill.token}")
+    if isinstance(stroke, t.Tone):
+        names.append(f"s-{stroke.token}")
+    return f' class="{" ".join(names)}"' if names else ""
+
+
 def rect(x, y, w, h, fill, radius=0, stroke=None, opacity=None) -> str:
     parts = [f'<rect x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h:.1f}" fill="{fill}"']
     if radius:
@@ -78,6 +90,7 @@ def rect(x, y, w, h, fill, radius=0, stroke=None, opacity=None) -> str:
         parts.append(f' stroke="{stroke}" stroke-width="1"')
     if opacity is not None:
         parts.append(f' opacity="{opacity}"')
+    parts.append(_cls(fill, stroke))
     parts.append("/>")
     return "".join(parts)
 
@@ -94,41 +107,48 @@ def text(x, y, content, size=12, fill=t.TEXT, weight=400, anchor="start",
         attrs.append(f'letter-spacing="{spacing}"')
     if family:
         attrs.append(f'font-family="{family}"')
-    return f'<text {" ".join(attrs)}>{_esc(content)}</text>'
+    return f'<text {" ".join(attrs)}{_cls(fill)}>{_esc(content)}</text>'
 
 
 def line(x1, y1, x2, y2, stroke=t.BORDER, width=1, dash=None) -> str:
     d = f' stroke-dasharray="{dash}"' if dash else ""
     return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
-            f'stroke="{stroke}" stroke-width="{width}"{d}/>')
+            f'stroke="{stroke}" stroke-width="{width}"{d}{_cls(stroke=stroke)}/>')
 
 
 def polyline(points, stroke, width=2, dash=None, fill="none") -> str:
     pts = " ".join(f"{x:.1f},{y:.1f}" for x, y in points)
     d = f' stroke-dasharray="{dash}"' if dash else ""
+    # fill is the literal "none" here, so only the stroke is tokenised - tagging
+    # the fill would let the dark rule turn every trend line into a filled blob.
     return (f'<polyline points="{pts}" fill="{fill}" stroke="{stroke}" '
-            f'stroke-width="{width}" stroke-linejoin="round" stroke-linecap="round"{d}/>')
+            f'stroke-width="{width}" stroke-linejoin="round" '
+            f'stroke-linecap="round"{d}{_cls(stroke=stroke)}/>')
 
 
 def polygon(points, fill, opacity=1.0) -> str:
     pts = " ".join(f"{x:.1f},{y:.1f}" for x, y in points)
-    return f'<polygon points="{pts}" fill="{fill}" opacity="{opacity}"/>'
+    return f'<polygon points="{pts}" fill="{fill}" opacity="{opacity}"{_cls(fill)}/>'
+
+
+def circle(cx, cy, r, fill) -> str:
+    return f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r}" fill="{fill}"{_cls(fill)}/>'
 
 
 # ------------------------------------------------------------- chrome parts --
 
 def nav_bar(active_page: str) -> list[str]:
     """The shared navigation bar repeated on every page."""
-    out = [rect(0, 0, W, NAV_H, t.INK)]
-    out.append(text(MARGIN, 28, "Enterprise Sales & Finance Analytics", 14, "#FFFFFF", 600))
+    out = [rect(0, 0, W, NAV_H, t.NAV)]
+    out.append(text(MARGIN, 28, "Enterprise Sales & Finance Analytics", 14, t.ON_NAV, 600))
 
     x = 420
     for page in PAGES:
         label_w = len(page) * 13 * CHAR_W + 22
         if page == active_page:
-            out.append(rect(x, 9, label_w, 26, "#FFFFFF", radius=3, opacity=0.14))
+            out.append(rect(x, 9, label_w, 26, t.ON_NAV, radius=3, opacity=0.14))
         out.append(text(x + label_w / 2, 26, page, 11.5,
-                        "#FFFFFF" if page == active_page else "#9FB3C8",
+                        t.ON_NAV if page == active_page else t.NAV_MUTED,
                         600 if page == active_page else 400, anchor="middle"))
         x += label_w + 4
     return out
@@ -150,7 +170,8 @@ def kpi_card(x, y, w, h, label, value, note=None, value_color=None) -> list[str]
     """A headline metric tile. One number, one label, one line of context."""
     return [
         rect(x, y, w, h, t.SURFACE, radius=3, stroke=t.BORDER),
-        rect(x, y, 3, h, value_color or t.INK),
+        # The accent rule is a chart-weight colour; the figure is text.
+        rect(x, y, 3, h, value_color or t.PRIMARY),
         text(x + 14, y + 20, label.upper(), 9.5, t.MUTED, 600, spacing="0.08em"),
         text(x + 14, y + 47, value, 24, value_color or t.INK, 600),
         text(x + 14, y + 65, note or "", 10, t.MUTED),
@@ -250,7 +271,7 @@ def line_chart(area, series, x_labels, value_fmt=t.money_compact, y_ticks=4,
     return out
 
 
-def bar_chart_h(area, labels, values, value_fmt=t.money_compact, colour=t.INK,
+def bar_chart_h(area, labels, values, value_fmt=t.money_compact, colour=t.PRIMARY,
                 highlight=None, max_bars=None, label_w=118):
     """Horizontal bars, ranked. `highlight` maps a label to an override colour."""
     x0, y0, w, h = area
@@ -318,7 +339,7 @@ def column_chart(area, labels, values, value_fmt=t.money_compact, colours=None,
     for i, (label, value) in enumerate(zip(labels, values)):
         cx = x0 + slot * i + slot / 2
         bar_h = plot_h * value / top
-        fill = (colours or [t.INK] * n)[i % len(colours or [t.INK])]
+        fill = (colours or [t.PRIMARY] * n)[i % len(colours or [t.PRIMARY])]
         out.append(rect(cx - bar_w / 2, plot_bottom - bar_h, bar_w, bar_h, fill, radius=2))
         out.append(text(cx, plot_bottom - bar_h - 6, value_fmt(value), 9.5, t.TEXT, 600,
                         anchor="middle"))
@@ -332,7 +353,7 @@ def column_chart(area, labels, values, value_fmt=t.money_compact, colours=None,
                for i, v in enumerate(line_series)]
         out.append(polyline(pts, line_colour or t.CAUTION, 2))
         for (px, py), v in zip(pts, line_series):
-            out.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="3" fill="{line_colour or t.CAUTION}"/>')
+            out.append(circle(px, py, 3, line_colour or t.CAUTION))
             out.append(text(px, py - 9, line_fmt(v), 9.5, line_colour or t.CAUTION, 600,
                             anchor="middle"))
     return out
@@ -356,7 +377,7 @@ def donut(cx, cy, radius, thickness, slices):
         out.append(
             f'<path d="M {x1:.1f} {y1:.1f} A {radius} {radius} 0 {large} 1 {x2:.1f} {y2:.1f} '
             f'L {x3:.1f} {y3:.1f} A {inner} {inner} 0 {large} 0 {x4:.1f} {y4:.1f} Z" '
-            f'fill="{colour}"/>'
+            f'fill="{colour}"{_cls(colour)}/>'
         )
         angle = end
     return out
@@ -430,6 +451,11 @@ def page(active: str, context: str, body: list[str]) -> str:
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" '
         f'height="{H}" font-family="{t.FONT_STACK}">',
         f'<title>{_esc(active)}</title>',
+        # Light is the baseline, carried on each element as a presentation
+        # attribute; this stylesheet only overrides it when the reader's browser
+        # asks for dark. A consumer that strips <style> still gets the light
+        # render rather than a broken one.
+        f'<style>\n{t.dark_mode_css()}\n</style>',
         rect(0, 0, W, H, t.CANVAS),
     ]
     parts += nav_bar(active)
@@ -485,11 +511,11 @@ def executive_dashboard(d: dict) -> str:
     body += parts
     body += line_chart(
         area,
-        [("Revenue", monthly["revenue"].tolist(), t.INK, False),
+        [("Revenue", monthly["revenue"].tolist(), t.PRIMARY, False),
          ("Profit", monthly["profit"].tolist(), t.TEAL, False)],
         [t.month_label(m) for m in monthly["month"]], label_every=4,
     )
-    body += legend(MARGIN + 620, row2_y + 22, [("Revenue", t.INK), ("Profit", t.TEAL)])
+    body += legend(MARGIN + 620, row2_y + 22, [("Revenue", t.PRIMARY), ("Profit", t.TEAL)])
 
     parts, area = panel(MARGIN + 780 + GUTTER, row2_y, W - 2 * MARGIN - 780 - GUTTER, row2_h,
                         "Revenue by region", "Countries rolled up to their region")
@@ -559,12 +585,12 @@ def sales_analytics(d: dict) -> str:
     rolling = monthly["revenue"].rolling(3, min_periods=1).mean().tolist()
     body += line_chart(
         area,
-        [("Revenue", monthly["revenue"].tolist(), t.INK, False),
+        [("Revenue", monthly["revenue"].tolist(), t.PRIMARY, False),
          ("3-month average", rolling, t.SERIES[4], True)],
         [t.month_label(m) for m in monthly["month"]], label_every=4,
     )
     body += legend(MARGIN + 560, row2_y + 22,
-                   [("Revenue", t.INK), ("3-month average", t.SERIES[4], True)])
+                   [("Revenue", t.PRIMARY), ("3-month average", t.SERIES[4], True)])
 
     parts, area = panel(MARGIN + 792, row2_y, W - 2 * MARGIN - 792, row2_h,
                         "Average order value by category")
@@ -690,7 +716,7 @@ def customer_analytics(d: dict) -> str:
                         "Cumulative customers on file by signup month")
     body += parts
     body += line_chart(
-        area, [("Cumulative customers", growth["cumulative_customers"].tolist(), t.INK, False)],
+        area, [("Cumulative customers", growth["cumulative_customers"].tolist(), t.PRIMARY, False)],
         [t.month_label(m) for m in growth["signup_month"]],
         value_fmt=t.number, label_every=5,
     )
@@ -839,7 +865,7 @@ def forecast_dashboard(d: dict) -> str:
 
     body += line_chart(
         area,
-        [("Actual revenue", actual, t.INK, False),
+        [("Actual revenue", actual, t.PRIMARY, False),
          ("3-month average", moving, t.SERIES[3], False),
          ("Linear trend", trend, t.SERIES[4], True),
          ("Projection", projected, t.TEAL, True)],
@@ -848,7 +874,7 @@ def forecast_dashboard(d: dict) -> str:
         divider=(n_hist - 1, "Last actual"),
     )
     body += legend(MARGIN + 300, row2_y + 24, [
-        ("Actual revenue", t.INK), ("3-month average", t.SERIES[3]),
+        ("Actual revenue", t.PRIMARY), ("3-month average", t.SERIES[3]),
         ("Linear trend", t.SERIES[4], True), ("Projection and range", t.TEAL, True),
     ])
 

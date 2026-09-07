@@ -76,6 +76,14 @@ so the numbers on them are the pipeline's actual output and the panel
 coordinates double as the layout specification in
 `powerbi/POWERBI_BUILD_GUIDE.md`.
 
+Each SVG carries both colour schemes: the light palette sits on every element
+as a presentation attribute, and an embedded stylesheet swaps in the dark
+palette under `prefers-color-scheme: dark`. Text and chart series are separate
+tokens, so in dark mode headings invert to near-white while the navy series
+brightens to a legible blue rather than disappearing into the background.
+The scheme follows the reader's browser or OS preference, which is not
+necessarily the same as a site's own light/dark toggle.
+
 ## Folder structure
 
 ```

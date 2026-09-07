@@ -1,195 +1,243 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif">
 <title>Customer Analytics</title>
-<rect x="0.0" y="0.0" width="1280.0" height="720.0" fill="#F5F7FA"/>
-<rect x="0.0" y="0.0" width="1280.0" height="44.0" fill="#10243E"/>
-<text x="16.0" y="28.0" font-size="14" fill="#FFFFFF" font-weight="600">Enterprise Sales &amp; Finance Analytics</text>
-<text x="495.2" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle">Executive Dashboard</text>
-<text x="636.1" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle">Sales Analytics</text>
-<text x="777.1" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle">Financial Analytics</text>
-<rect x="856.3" y="9.0" width="143.7" height="26.0" fill="#FFFFFF" rx="3" opacity="0.14"/>
-<text x="928.1" y="26.0" font-size="11.5" fill="#FFFFFF" font-weight="600" text-anchor="middle">Customer Analytics</text>
-<text x="1079.2" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle">Inventory Analytics</text>
-<text x="1230.2" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle">Forecast Dashboard</text>
-<rect x="0.0" y="44.0" width="1280.0" height="30.0" fill="#FFFFFF"/>
-<line x1="0.0" y1="74.0" x2="1280.0" y2="74.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="16.0" y="63.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.09em">FILTERS</text>
-<text x="74.0" y="63.0" font-size="11" fill="#2E3A4B" font-weight="400">All years  ·  All regions  ·  All categories  ·  All segments</text>
-<text x="1264.0" y="63.0" font-size="10" fill="#6B7A8D" font-weight="400" text-anchor="end">Synced across all pages</text>
-<rect x="16.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="16.0" y="90.0" width="3.0" height="78.0" fill="#10243E"/>
-<text x="30.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">CUSTOMERS</text>
-<text x="30.0" y="137.0" font-size="24" fill="#10243E" font-weight="600">500</text>
-<text x="30.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Transacting in period</text>
-<rect x="226.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="226.0" y="90.0" width="3.0" height="78.0" fill="#10243E"/>
-<text x="240.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">CUSTOMERS ON FILE</text>
-<text x="240.0" y="137.0" font-size="24" fill="#10243E" font-weight="600">500</text>
-<text x="240.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Rows in DimCustomer</text>
-<rect x="436.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="436.0" y="90.0" width="3.0" height="78.0" fill="#10243E"/>
-<text x="450.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">ORDERS PER CUSTOMER</text>
-<text x="450.0" y="137.0" font-size="24" fill="#10243E" font-weight="600">39.3</text>
-<text x="450.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Across 36 months</text>
-<rect x="646.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="646.0" y="90.0" width="3.0" height="78.0" fill="#10243E"/>
-<text x="660.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">REVENUE PER CUSTOMER</text>
-<text x="660.0" y="137.0" font-size="24" fill="#10243E" font-weight="600">$206K</text>
-<text x="660.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Lifetime, in period</text>
-<rect x="856.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="856.0" y="90.0" width="3.0" height="78.0" fill="#10243E"/>
-<text x="870.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">REPEAT RATE</text>
-<text x="870.0" y="137.0" font-size="24" fill="#10243E" font-weight="600">100.0%</text>
-<text x="870.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Saturated on this base</text>
-<rect x="1066.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="1066.0" y="90.0" width="3.0" height="78.0" fill="#10243E"/>
-<text x="1080.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">AVERAGE ORDER VALUE</text>
-<text x="1080.0" y="137.0" font-size="24" fill="#10243E" font-weight="600">$5,244</text>
-<text x="1080.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Revenue / orders</text>
-<rect x="16.0" y="180.0" width="780.0" height="248.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<text x="30.0" y="202.0" font-size="12.5" fill="#10243E" font-weight="600">Customer base growth</text>
-<text x="30.0" y="217.0" font-size="10" fill="#6B7A8D" font-weight="400">Cumulative customers on file by signup month</text>
-<line x1="76.0" y1="396.0" x2="782.0" y2="396.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="68.0" y="399.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end">0</text>
-<line x1="76.0" y1="354.0" x2="782.0" y2="354.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="68.0" y="357.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end">125</text>
-<line x1="76.0" y1="312.0" x2="782.0" y2="312.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="68.0" y="315.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end">250</text>
-<line x1="76.0" y1="270.0" x2="782.0" y2="270.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="68.0" y="273.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end">375</text>
-<line x1="76.0" y1="228.0" x2="782.0" y2="228.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="68.0" y="231.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end">500</text>
-<text x="76.0" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Jan 2021</text>
-<text x="154.4" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Jun 2021</text>
-<text x="232.9" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Nov 2021</text>
-<text x="311.3" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Apr 2022</text>
-<text x="389.8" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Sep 2022</text>
-<text x="468.2" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Feb 2023</text>
-<text x="546.7" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Jul 2023</text>
-<text x="625.1" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Dec 2023</text>
-<text x="703.6" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">May 2024</text>
-<text x="782.0" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Oct 2024</text>
-<polyline points="76.0,392.3 91.7,390.6 107.4,389.3 123.1,385.2 138.8,381.9 154.4,376.5 170.1,373.5 185.8,368.1 201.5,366.4 217.2,361.7 232.9,358.7 248.6,354.7 264.3,352.0 280.0,349.6 295.6,346.6 311.3,342.2 327.0,335.5 342.7,332.8 358.4,328.5 374.1,325.8 389.8,322.4 405.5,318.7 421.2,314.4 436.8,311.7 452.5,308.3 468.2,302.9 483.9,299.9 499.6,296.9 515.3,292.8 531.0,289.5 546.7,285.5 562.4,281.1 578.0,278.7 593.7,274.7 609.4,272.4 625.1,269.3 640.8,265.3 656.5,259.6 672.2,254.2 687.9,251.9 703.6,248.5 719.2,244.5 734.9,241.8 750.6,236.4 766.3,232.0 782.0,228.0" fill="none" stroke="#10243E" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-<rect x="808.0" y="180.0" width="456.0" height="248.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<text x="822.0" y="202.0" font-size="12.5" fill="#10243E" font-weight="600">Revenue by segment</text>
-<path d="M 900.0 247.0 A 62 62 0 0 1 954.3 339.0 L 935.0 328.4 A 40 40 0 0 0 900.0 269.0 Z" fill="#10243E"/>
-<path d="M 954.3 339.0 A 62 62 0 0 1 859.3 355.8 L 873.7 339.2 A 40 40 0 0 0 935.0 328.4 Z" fill="#0F7C86"/>
-<path d="M 859.3 355.8 A 62 62 0 0 1 860.6 261.1 L 874.6 278.1 A 40 40 0 0 0 873.7 339.2 Z" fill="#3E7CB1"/>
-<path d="M 860.6 261.1 A 62 62 0 0 1 891.8 247.6 L 894.7 269.4 A 40 40 0 0 0 874.6 278.1 Z" fill="#6FA8A5"/>
-<path d="M 891.8 247.6 A 62 62 0 0 1 900.0 247.0 L 900.0 269.0 A 40 40 0 0 0 894.7 269.4 Z" fill="#C08A2E"/>
-<rect x="980.0" y="223.0" width="9.0" height="9.0" fill="#10243E" rx="2"/>
-<text x="995.0" y="231.0" font-size="10.5" fill="#2E3A4B" font-weight="400">SMB</text>
-<text x="1250.0" y="231.0" font-size="10.5" fill="#6B7A8D" font-weight="400" text-anchor="end">$34.1M</text>
-<rect x="980.0" y="244.0" width="9.0" height="9.0" fill="#0F7C86" rx="2"/>
-<text x="995.0" y="252.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Enterprise</text>
-<text x="1250.0" y="252.0" font-size="10.5" fill="#6B7A8D" font-weight="400" text-anchor="end">$29.3M</text>
-<rect x="980.0" y="265.0" width="9.0" height="9.0" fill="#3E7CB1" rx="2"/>
-<text x="995.0" y="273.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Consumer</text>
-<text x="1250.0" y="273.0" font-size="10.5" fill="#6B7A8D" font-weight="400" text-anchor="end">$28.5M</text>
-<rect x="980.0" y="286.0" width="9.0" height="9.0" fill="#6FA8A5" rx="2"/>
-<text x="995.0" y="294.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Government</text>
-<text x="1250.0" y="294.0" font-size="10.5" fill="#6B7A8D" font-weight="400" text-anchor="end">$9.1M</text>
-<rect x="980.0" y="307.0" width="9.0" height="9.0" fill="#C08A2E" rx="2"/>
-<text x="995.0" y="315.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Unclassified</text>
-<text x="1250.0" y="315.0" font-size="10.5" fill="#6B7A8D" font-weight="400" text-anchor="end">$2.2M</text>
-<rect x="16.0" y="440.0" width="700.0" height="264.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<text x="30.0" y="462.0" font-size="12.5" fill="#10243E" font-weight="600">Top 10 customers by revenue</text>
-<text x="30.0" y="484.0" font-size="9" fill="#6B7A8D" font-weight="600" letter-spacing="0.06em">CUSTOMER</text>
-<text x="198.0" y="484.0" font-size="9" fill="#6B7A8D" font-weight="600" letter-spacing="0.06em">SEGMENT</text>
-<text x="310.0" y="484.0" font-size="9" fill="#6B7A8D" font-weight="600" letter-spacing="0.06em">REGION</text>
-<text x="560.0" y="484.0" font-size="9" fill="#6B7A8D" font-weight="600" text-anchor="end" letter-spacing="0.06em">REVENUE</text>
-<text x="634.0" y="484.0" font-size="9" fill="#6B7A8D" font-weight="600" text-anchor="end" letter-spacing="0.06em">ORDERS</text>
-<text x="702.0" y="484.0" font-size="9" fill="#6B7A8D" font-weight="600" text-anchor="end" letter-spacing="0.06em">AOV</text>
-<line x1="30.0" y1="490.0" x2="702.0" y2="490.0" stroke="#10243E" stroke-width="1"/>
-<text x="30.0" y="504.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Ava Garcia</text>
-<text x="198.0" y="504.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Enterprise</text>
-<text x="310.0" y="504.0" font-size="10.5" fill="#2E3A4B" font-weight="400">North America</text>
-<text x="554.0" y="504.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$339K</text>
-<text x="628.0" y="504.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">56</text>
-<text x="696.0" y="504.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$6,049</text>
-<line x1="30.0" y1="511.0" x2="702.0" y2="511.0" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="30.0" y="511.0" width="672.0" height="21.0" fill="#EEF2F7"/>
-<text x="30.0" y="525.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Olivia Dubois</text>
-<text x="198.0" y="525.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Enterprise</text>
-<text x="310.0" y="525.0" font-size="10.5" fill="#2E3A4B" font-weight="400">North America</text>
-<text x="554.0" y="525.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$335K</text>
-<text x="628.0" y="525.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">55</text>
-<text x="696.0" y="525.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$6,089</text>
-<line x1="30.0" y1="532.0" x2="702.0" y2="532.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="30.0" y="546.0" font-size="10.5" fill="#2E3A4B" font-weight="400">James Johnson</text>
-<text x="198.0" y="546.0" font-size="10.5" fill="#2E3A4B" font-weight="400">SMB</text>
-<text x="310.0" y="546.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Asia Pacific</text>
-<text x="554.0" y="546.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$317K</text>
-<text x="628.0" y="546.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">52</text>
-<text x="696.0" y="546.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$6,094</text>
-<line x1="30.0" y1="553.0" x2="702.0" y2="553.0" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="30.0" y="553.0" width="672.0" height="21.0" fill="#EEF2F7"/>
-<text x="30.0" y="567.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Lucas Brown</text>
-<text x="198.0" y="567.0" font-size="10.5" fill="#2E3A4B" font-weight="400">SMB</text>
-<text x="310.0" y="567.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Asia Pacific</text>
-<text x="554.0" y="567.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$316K</text>
-<text x="628.0" y="567.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">50</text>
-<text x="696.0" y="567.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$6,322</text>
-<line x1="30.0" y1="574.0" x2="702.0" y2="574.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="30.0" y="588.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Wei Brown</text>
-<text x="198.0" y="588.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Enterprise</text>
-<text x="310.0" y="588.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Latin America</text>
-<text x="554.0" y="588.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$313K</text>
-<text x="628.0" y="588.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">47</text>
-<text x="696.0" y="588.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$6,656</text>
-<line x1="30.0" y1="595.0" x2="702.0" y2="595.0" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="30.0" y="595.0" width="672.0" height="21.0" fill="#EEF2F7"/>
-<text x="30.0" y="609.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Liam Smith</text>
-<text x="198.0" y="609.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Enterprise</text>
-<text x="310.0" y="609.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Asia Pacific</text>
-<text x="554.0" y="609.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$312K</text>
-<text x="628.0" y="609.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">54</text>
-<text x="696.0" y="609.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$5,779</text>
-<line x1="30.0" y1="616.0" x2="702.0" y2="616.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="30.0" y="630.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Emma Kumar</text>
-<text x="198.0" y="630.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Enterprise</text>
-<text x="310.0" y="630.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Asia Pacific</text>
-<text x="554.0" y="630.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$311K</text>
-<text x="628.0" y="630.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">51</text>
-<text x="696.0" y="630.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$6,097</text>
-<line x1="30.0" y1="637.0" x2="702.0" y2="637.0" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="30.0" y="637.0" width="672.0" height="21.0" fill="#EEF2F7"/>
-<text x="30.0" y="651.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Sofia Kumar</text>
-<text x="198.0" y="651.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Enterprise</text>
-<text x="310.0" y="651.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Latin America</text>
-<text x="554.0" y="651.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$310K</text>
-<text x="628.0" y="651.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">61</text>
-<text x="696.0" y="651.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$5,083</text>
-<line x1="30.0" y1="658.0" x2="702.0" y2="658.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="30.0" y="672.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Sofia Novak</text>
-<text x="198.0" y="672.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Consumer</text>
-<text x="310.0" y="672.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Latin America</text>
-<text x="554.0" y="672.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$305K</text>
-<text x="628.0" y="672.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">48</text>
-<text x="696.0" y="672.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$6,360</text>
-<line x1="30.0" y1="679.0" x2="702.0" y2="679.0" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="30.0" y="679.0" width="672.0" height="21.0" fill="#EEF2F7"/>
-<text x="30.0" y="693.0" font-size="10.5" fill="#2E3A4B" font-weight="400">James Wang</text>
-<text x="198.0" y="693.0" font-size="10.5" fill="#2E3A4B" font-weight="400">SMB</text>
-<text x="310.0" y="693.0" font-size="10.5" fill="#2E3A4B" font-weight="400">North America</text>
-<text x="554.0" y="693.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$303K</text>
-<text x="628.0" y="693.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">41</text>
-<text x="696.0" y="693.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$7,397</text>
-<line x1="30.0" y1="700.0" x2="702.0" y2="700.0" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="728.0" y="440.0" width="536.0" height="264.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<text x="742.0" y="462.0" font-size="12.5" fill="#10243E" font-weight="600">Revenue per customer by segment</text>
-<text x="742.0" y="499.3" font-size="10.5" fill="#2E3A4B" font-weight="400">Unclassified</text>
-<rect x="852.0" y="487.8" width="299.3" height="16.0" fill="#6FA8A5" rx="2"/>
-<text x="1158.3" y="499.3" font-size="10" fill="#6B7A8D" font-weight="400">$219K</text>
-<text x="742.0" y="542.9" font-size="10.5" fill="#2E3A4B" font-weight="400">Enterprise</text>
-<rect x="852.0" y="531.4" width="292.1" height="16.0" fill="#6FA8A5" rx="2"/>
-<text x="1151.1" y="542.9" font-size="10" fill="#6B7A8D" font-weight="400">$214K</text>
-<text x="742.0" y="586.5" font-size="10.5" fill="#2E3A4B" font-weight="400">SMB</text>
-<rect x="852.0" y="575.0" width="280.7" height="16.0" fill="#6FA8A5" rx="2"/>
-<text x="1139.7" y="586.5" font-size="10" fill="#6B7A8D" font-weight="400">$205K</text>
-<text x="742.0" y="630.1" font-size="10.5" fill="#2E3A4B" font-weight="400">Government</text>
-<rect x="852.0" y="618.6" width="276.7" height="16.0" fill="#6FA8A5" rx="2"/>
-<text x="1135.7" y="630.1" font-size="10" fill="#6B7A8D" font-weight="400">$202K</text>
-<text x="742.0" y="673.7" font-size="10.5" fill="#2E3A4B" font-weight="400">Consumer</text>
-<rect x="852.0" y="662.2" width="274.6" height="16.0" fill="#6FA8A5" rx="2"/>
-<text x="1133.6" y="673.7" font-size="10" fill="#6B7A8D" font-weight="400">$201K</text>
+<style>
+  @media (prefers-color-scheme: dark) {
+    .f-canvas{fill:#0D1117}
+    .s-canvas{stroke:#0D1117}
+    .f-surface{fill:#161B22}
+    .s-surface{stroke:#161B22}
+    .f-surfaceAlt{fill:#1C2430}
+    .s-surfaceAlt{stroke:#1C2430}
+    .f-border{fill:#30363D}
+    .s-border{stroke:#30363D}
+    .f-ink{fill:#E6EDF3}
+    .s-ink{stroke:#E6EDF3}
+    .f-inkSoft{fill:#C6D3E1}
+    .s-inkSoft{stroke:#C6D3E1}
+    .f-text{fill:#BAC5D2}
+    .s-text{stroke:#BAC5D2}
+    .f-muted{fill:#8B98A8}
+    .s-muted{stroke:#8B98A8}
+    .f-nav{fill:#152233}
+    .s-nav{stroke:#152233}
+    .f-onNav{fill:#E6EDF3}
+    .s-onNav{stroke:#E6EDF3}
+    .f-navMuted{fill:#8095AC}
+    .s-navMuted{stroke:#8095AC}
+    .f-positive{fill:#46B37F}
+    .s-positive{stroke:#46B37F}
+    .f-caution{fill:#D3A03A}
+    .s-caution{stroke:#D3A03A}
+    .f-negative{fill:#E06C60}
+    .s-negative{stroke:#E06C60}
+    .f-series0{fill:#7FB0E0}
+    .s-series0{stroke:#7FB0E0}
+    .f-series1{fill:#3FB8C4}
+    .s-series1{stroke:#3FB8C4}
+    .f-series2{fill:#6FA8DC}
+    .s-series2{stroke:#6FA8DC}
+    .f-series3{fill:#86C3BF}
+    .s-series3{stroke:#86C3BF}
+    .f-series4{fill:#D9A94A}
+    .s-series4{stroke:#D9A94A}
+    .f-series5{fill:#A99BD6}
+    .s-series5{stroke:#A99BD6}
+    .f-series6{fill:#D08983}
+    .s-series6{stroke:#D08983}
+    .f-series7{fill:#9AA7B4}
+    .s-series7{stroke:#9AA7B4}
+  }
+</style>
+<rect x="0.0" y="0.0" width="1280.0" height="720.0" fill="#F5F7FA" class="f-canvas"/>
+<rect x="0.0" y="0.0" width="1280.0" height="44.0" fill="#10243E" class="f-nav"/>
+<text x="16.0" y="28.0" font-size="14" fill="#FFFFFF" font-weight="600" class="f-onNav">Enterprise Sales &amp; Finance Analytics</text>
+<text x="495.2" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle" class="f-navMuted">Executive Dashboard</text>
+<text x="636.1" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle" class="f-navMuted">Sales Analytics</text>
+<text x="777.1" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle" class="f-navMuted">Financial Analytics</text>
+<rect x="856.3" y="9.0" width="143.7" height="26.0" fill="#FFFFFF" rx="3" opacity="0.14" class="f-onNav"/>
+<text x="928.1" y="26.0" font-size="11.5" fill="#FFFFFF" font-weight="600" text-anchor="middle" class="f-onNav">Customer Analytics</text>
+<text x="1079.2" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle" class="f-navMuted">Inventory Analytics</text>
+<text x="1230.2" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle" class="f-navMuted">Forecast Dashboard</text>
+<rect x="0.0" y="44.0" width="1280.0" height="30.0" fill="#FFFFFF" class="f-surface"/>
+<line x1="0.0" y1="74.0" x2="1280.0" y2="74.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="16.0" y="63.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.09em" class="f-muted">FILTERS</text>
+<text x="74.0" y="63.0" font-size="11" fill="#2E3A4B" font-weight="400" class="f-text">All years  ·  All regions  ·  All categories  ·  All segments</text>
+<text x="1264.0" y="63.0" font-size="10" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">Synced across all pages</text>
+<rect x="16.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<rect x="16.0" y="90.0" width="3.0" height="78.0" fill="#10243E" class="f-series0"/>
+<text x="30.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em" class="f-muted">CUSTOMERS</text>
+<text x="30.0" y="137.0" font-size="24" fill="#10243E" font-weight="600" class="f-ink">500</text>
+<text x="30.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Transacting in period</text>
+<rect x="226.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<rect x="226.0" y="90.0" width="3.0" height="78.0" fill="#10243E" class="f-series0"/>
+<text x="240.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em" class="f-muted">CUSTOMERS ON FILE</text>
+<text x="240.0" y="137.0" font-size="24" fill="#10243E" font-weight="600" class="f-ink">500</text>
+<text x="240.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Rows in DimCustomer</text>
+<rect x="436.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<rect x="436.0" y="90.0" width="3.0" height="78.0" fill="#10243E" class="f-series0"/>
+<text x="450.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em" class="f-muted">ORDERS PER CUSTOMER</text>
+<text x="450.0" y="137.0" font-size="24" fill="#10243E" font-weight="600" class="f-ink">39.3</text>
+<text x="450.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Across 36 months</text>
+<rect x="646.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<rect x="646.0" y="90.0" width="3.0" height="78.0" fill="#10243E" class="f-series0"/>
+<text x="660.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em" class="f-muted">REVENUE PER CUSTOMER</text>
+<text x="660.0" y="137.0" font-size="24" fill="#10243E" font-weight="600" class="f-ink">$206K</text>
+<text x="660.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Lifetime, in period</text>
+<rect x="856.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<rect x="856.0" y="90.0" width="3.0" height="78.0" fill="#10243E" class="f-series0"/>
+<text x="870.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em" class="f-muted">REPEAT RATE</text>
+<text x="870.0" y="137.0" font-size="24" fill="#10243E" font-weight="600" class="f-ink">100.0%</text>
+<text x="870.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Saturated on this base</text>
+<rect x="1066.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<rect x="1066.0" y="90.0" width="3.0" height="78.0" fill="#10243E" class="f-series0"/>
+<text x="1080.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em" class="f-muted">AVERAGE ORDER VALUE</text>
+<text x="1080.0" y="137.0" font-size="24" fill="#10243E" font-weight="600" class="f-ink">$5,244</text>
+<text x="1080.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Revenue / orders</text>
+<rect x="16.0" y="180.0" width="780.0" height="248.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<text x="30.0" y="202.0" font-size="12.5" fill="#10243E" font-weight="600" class="f-ink">Customer base growth</text>
+<text x="30.0" y="217.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Cumulative customers on file by signup month</text>
+<line x1="76.0" y1="396.0" x2="782.0" y2="396.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="68.0" y="399.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">0</text>
+<line x1="76.0" y1="354.0" x2="782.0" y2="354.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="68.0" y="357.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">125</text>
+<line x1="76.0" y1="312.0" x2="782.0" y2="312.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="68.0" y="315.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">250</text>
+<line x1="76.0" y1="270.0" x2="782.0" y2="270.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="68.0" y="273.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">375</text>
+<line x1="76.0" y1="228.0" x2="782.0" y2="228.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="68.0" y="231.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">500</text>
+<text x="76.0" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Jan 2021</text>
+<text x="154.4" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Jun 2021</text>
+<text x="232.9" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Nov 2021</text>
+<text x="311.3" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Apr 2022</text>
+<text x="389.8" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Sep 2022</text>
+<text x="468.2" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Feb 2023</text>
+<text x="546.7" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Jul 2023</text>
+<text x="625.1" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Dec 2023</text>
+<text x="703.6" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">May 2024</text>
+<text x="782.0" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Oct 2024</text>
+<polyline points="76.0,392.3 91.7,390.6 107.4,389.3 123.1,385.2 138.8,381.9 154.4,376.5 170.1,373.5 185.8,368.1 201.5,366.4 217.2,361.7 232.9,358.7 248.6,354.7 264.3,352.0 280.0,349.6 295.6,346.6 311.3,342.2 327.0,335.5 342.7,332.8 358.4,328.5 374.1,325.8 389.8,322.4 405.5,318.7 421.2,314.4 436.8,311.7 452.5,308.3 468.2,302.9 483.9,299.9 499.6,296.9 515.3,292.8 531.0,289.5 546.7,285.5 562.4,281.1 578.0,278.7 593.7,274.7 609.4,272.4 625.1,269.3 640.8,265.3 656.5,259.6 672.2,254.2 687.9,251.9 703.6,248.5 719.2,244.5 734.9,241.8 750.6,236.4 766.3,232.0 782.0,228.0" fill="none" stroke="#10243E" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" class="s-series0"/>
+<rect x="808.0" y="180.0" width="456.0" height="248.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<text x="822.0" y="202.0" font-size="12.5" fill="#10243E" font-weight="600" class="f-ink">Revenue by segment</text>
+<path d="M 900.0 247.0 A 62 62 0 0 1 954.3 339.0 L 935.0 328.4 A 40 40 0 0 0 900.0 269.0 Z" fill="#10243E" class="f-series0"/>
+<path d="M 954.3 339.0 A 62 62 0 0 1 859.3 355.8 L 873.7 339.2 A 40 40 0 0 0 935.0 328.4 Z" fill="#0F7C86" class="f-series1"/>
+<path d="M 859.3 355.8 A 62 62 0 0 1 860.6 261.1 L 874.6 278.1 A 40 40 0 0 0 873.7 339.2 Z" fill="#3E7CB1" class="f-series2"/>
+<path d="M 860.6 261.1 A 62 62 0 0 1 891.8 247.6 L 894.7 269.4 A 40 40 0 0 0 874.6 278.1 Z" fill="#6FA8A5" class="f-series3"/>
+<path d="M 891.8 247.6 A 62 62 0 0 1 900.0 247.0 L 900.0 269.0 A 40 40 0 0 0 894.7 269.4 Z" fill="#C08A2E" class="f-series4"/>
+<rect x="980.0" y="223.0" width="9.0" height="9.0" fill="#10243E" rx="2" class="f-series0"/>
+<text x="995.0" y="231.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">SMB</text>
+<text x="1250.0" y="231.0" font-size="10.5" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">$34.1M</text>
+<rect x="980.0" y="244.0" width="9.0" height="9.0" fill="#0F7C86" rx="2" class="f-series1"/>
+<text x="995.0" y="252.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Enterprise</text>
+<text x="1250.0" y="252.0" font-size="10.5" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">$29.3M</text>
+<rect x="980.0" y="265.0" width="9.0" height="9.0" fill="#3E7CB1" rx="2" class="f-series2"/>
+<text x="995.0" y="273.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Consumer</text>
+<text x="1250.0" y="273.0" font-size="10.5" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">$28.5M</text>
+<rect x="980.0" y="286.0" width="9.0" height="9.0" fill="#6FA8A5" rx="2" class="f-series3"/>
+<text x="995.0" y="294.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Government</text>
+<text x="1250.0" y="294.0" font-size="10.5" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">$9.1M</text>
+<rect x="980.0" y="307.0" width="9.0" height="9.0" fill="#C08A2E" rx="2" class="f-series4"/>
+<text x="995.0" y="315.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Unclassified</text>
+<text x="1250.0" y="315.0" font-size="10.5" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">$2.2M</text>
+<rect x="16.0" y="440.0" width="700.0" height="264.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<text x="30.0" y="462.0" font-size="12.5" fill="#10243E" font-weight="600" class="f-ink">Top 10 customers by revenue</text>
+<text x="30.0" y="484.0" font-size="9" fill="#6B7A8D" font-weight="600" letter-spacing="0.06em" class="f-muted">CUSTOMER</text>
+<text x="198.0" y="484.0" font-size="9" fill="#6B7A8D" font-weight="600" letter-spacing="0.06em" class="f-muted">SEGMENT</text>
+<text x="310.0" y="484.0" font-size="9" fill="#6B7A8D" font-weight="600" letter-spacing="0.06em" class="f-muted">REGION</text>
+<text x="560.0" y="484.0" font-size="9" fill="#6B7A8D" font-weight="600" text-anchor="end" letter-spacing="0.06em" class="f-muted">REVENUE</text>
+<text x="634.0" y="484.0" font-size="9" fill="#6B7A8D" font-weight="600" text-anchor="end" letter-spacing="0.06em" class="f-muted">ORDERS</text>
+<text x="702.0" y="484.0" font-size="9" fill="#6B7A8D" font-weight="600" text-anchor="end" letter-spacing="0.06em" class="f-muted">AOV</text>
+<line x1="30.0" y1="490.0" x2="702.0" y2="490.0" stroke="#10243E" stroke-width="1" class="s-ink"/>
+<text x="30.0" y="504.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Ava Garcia</text>
+<text x="198.0" y="504.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Enterprise</text>
+<text x="310.0" y="504.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">North America</text>
+<text x="554.0" y="504.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$339K</text>
+<text x="628.0" y="504.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">56</text>
+<text x="696.0" y="504.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$6,049</text>
+<line x1="30.0" y1="511.0" x2="702.0" y2="511.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<rect x="30.0" y="511.0" width="672.0" height="21.0" fill="#EEF2F7" class="f-surfaceAlt"/>
+<text x="30.0" y="525.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Olivia Dubois</text>
+<text x="198.0" y="525.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Enterprise</text>
+<text x="310.0" y="525.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">North America</text>
+<text x="554.0" y="525.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$335K</text>
+<text x="628.0" y="525.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">55</text>
+<text x="696.0" y="525.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$6,089</text>
+<line x1="30.0" y1="532.0" x2="702.0" y2="532.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="30.0" y="546.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">James Johnson</text>
+<text x="198.0" y="546.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">SMB</text>
+<text x="310.0" y="546.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Asia Pacific</text>
+<text x="554.0" y="546.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$317K</text>
+<text x="628.0" y="546.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">52</text>
+<text x="696.0" y="546.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$6,094</text>
+<line x1="30.0" y1="553.0" x2="702.0" y2="553.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<rect x="30.0" y="553.0" width="672.0" height="21.0" fill="#EEF2F7" class="f-surfaceAlt"/>
+<text x="30.0" y="567.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Lucas Brown</text>
+<text x="198.0" y="567.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">SMB</text>
+<text x="310.0" y="567.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Asia Pacific</text>
+<text x="554.0" y="567.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$316K</text>
+<text x="628.0" y="567.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">50</text>
+<text x="696.0" y="567.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$6,322</text>
+<line x1="30.0" y1="574.0" x2="702.0" y2="574.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="30.0" y="588.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Wei Brown</text>
+<text x="198.0" y="588.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Enterprise</text>
+<text x="310.0" y="588.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Latin America</text>
+<text x="554.0" y="588.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$313K</text>
+<text x="628.0" y="588.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">47</text>
+<text x="696.0" y="588.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$6,656</text>
+<line x1="30.0" y1="595.0" x2="702.0" y2="595.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<rect x="30.0" y="595.0" width="672.0" height="21.0" fill="#EEF2F7" class="f-surfaceAlt"/>
+<text x="30.0" y="609.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Liam Smith</text>
+<text x="198.0" y="609.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Enterprise</text>
+<text x="310.0" y="609.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Asia Pacific</text>
+<text x="554.0" y="609.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$312K</text>
+<text x="628.0" y="609.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">54</text>
+<text x="696.0" y="609.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$5,779</text>
+<line x1="30.0" y1="616.0" x2="702.0" y2="616.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="30.0" y="630.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Emma Kumar</text>
+<text x="198.0" y="630.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Enterprise</text>
+<text x="310.0" y="630.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Asia Pacific</text>
+<text x="554.0" y="630.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$311K</text>
+<text x="628.0" y="630.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">51</text>
+<text x="696.0" y="630.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$6,097</text>
+<line x1="30.0" y1="637.0" x2="702.0" y2="637.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<rect x="30.0" y="637.0" width="672.0" height="21.0" fill="#EEF2F7" class="f-surfaceAlt"/>
+<text x="30.0" y="651.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Sofia Kumar</text>
+<text x="198.0" y="651.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Enterprise</text>
+<text x="310.0" y="651.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Latin America</text>
+<text x="554.0" y="651.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$310K</text>
+<text x="628.0" y="651.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">61</text>
+<text x="696.0" y="651.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$5,083</text>
+<line x1="30.0" y1="658.0" x2="702.0" y2="658.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="30.0" y="672.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Sofia Novak</text>
+<text x="198.0" y="672.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Consumer</text>
+<text x="310.0" y="672.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Latin America</text>
+<text x="554.0" y="672.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$305K</text>
+<text x="628.0" y="672.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">48</text>
+<text x="696.0" y="672.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$6,360</text>
+<line x1="30.0" y1="679.0" x2="702.0" y2="679.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<rect x="30.0" y="679.0" width="672.0" height="21.0" fill="#EEF2F7" class="f-surfaceAlt"/>
+<text x="30.0" y="693.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">James Wang</text>
+<text x="198.0" y="693.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">SMB</text>
+<text x="310.0" y="693.0" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">North America</text>
+<text x="554.0" y="693.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$303K</text>
+<text x="628.0" y="693.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">41</text>
+<text x="696.0" y="693.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$7,397</text>
+<line x1="30.0" y1="700.0" x2="702.0" y2="700.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<rect x="728.0" y="440.0" width="536.0" height="264.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<text x="742.0" y="462.0" font-size="12.5" fill="#10243E" font-weight="600" class="f-ink">Revenue per customer by segment</text>
+<text x="742.0" y="499.3" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Unclassified</text>
+<rect x="852.0" y="487.8" width="299.3" height="16.0" fill="#6FA8A5" rx="2" class="f-series3"/>
+<text x="1158.3" y="499.3" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">$219K</text>
+<text x="742.0" y="542.9" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Enterprise</text>
+<rect x="852.0" y="531.4" width="292.1" height="16.0" fill="#6FA8A5" rx="2" class="f-series3"/>
+<text x="1151.1" y="542.9" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">$214K</text>
+<text x="742.0" y="586.5" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">SMB</text>
+<rect x="852.0" y="575.0" width="280.7" height="16.0" fill="#6FA8A5" rx="2" class="f-series3"/>
+<text x="1139.7" y="586.5" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">$205K</text>
+<text x="742.0" y="630.1" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Government</text>
+<rect x="852.0" y="618.6" width="276.7" height="16.0" fill="#6FA8A5" rx="2" class="f-series3"/>
+<text x="1135.7" y="630.1" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">$202K</text>
+<text x="742.0" y="673.7" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Consumer</text>
+<rect x="852.0" y="662.2" width="274.6" height="16.0" fill="#6FA8A5" rx="2" class="f-series3"/>
+<text x="1133.6" y="673.7" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">$201K</text>
 </svg>

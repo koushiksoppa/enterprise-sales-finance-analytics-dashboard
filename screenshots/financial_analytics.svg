@@ -1,156 +1,204 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif">
 <title>Financial Analytics</title>
-<rect x="0.0" y="0.0" width="1280.0" height="720.0" fill="#F5F7FA"/>
-<rect x="0.0" y="0.0" width="1280.0" height="44.0" fill="#10243E"/>
-<text x="16.0" y="28.0" font-size="14" fill="#FFFFFF" font-weight="600">Enterprise Sales &amp; Finance Analytics</text>
-<text x="495.2" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle">Executive Dashboard</text>
-<text x="636.1" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle">Sales Analytics</text>
-<rect x="701.8" y="9.0" width="150.4" height="26.0" fill="#FFFFFF" rx="3" opacity="0.14"/>
-<text x="777.1" y="26.0" font-size="11.5" fill="#FFFFFF" font-weight="600" text-anchor="middle">Financial Analytics</text>
-<text x="928.1" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle">Customer Analytics</text>
-<text x="1079.2" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle">Inventory Analytics</text>
-<text x="1230.2" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle">Forecast Dashboard</text>
-<rect x="0.0" y="44.0" width="1280.0" height="30.0" fill="#FFFFFF"/>
-<line x1="0.0" y1="74.0" x2="1280.0" y2="74.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="16.0" y="63.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.09em">FILTERS</text>
-<text x="74.0" y="63.0" font-size="11" fill="#2E3A4B" font-weight="400">All years  ·  All regions  ·  All categories  ·  All segments</text>
-<text x="1264.0" y="63.0" font-size="10" fill="#6B7A8D" font-weight="400" text-anchor="end">Synced across all pages</text>
-<rect x="16.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="16.0" y="90.0" width="3.0" height="78.0" fill="#10243E"/>
-<text x="30.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">REVENUE</text>
-<text x="30.0" y="137.0" font-size="24" fill="#10243E" font-weight="600">$103.1M</text>
-<text x="30.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Net of discounts</text>
-<rect x="226.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="226.0" y="90.0" width="3.0" height="78.0" fill="#10243E"/>
-<text x="240.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">COST OF GOODS</text>
-<text x="240.0" y="137.0" font-size="24" fill="#10243E" font-weight="600">$52.4M</text>
-<text x="240.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Direct product cost</text>
-<rect x="436.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="436.0" y="90.0" width="3.0" height="78.0" fill="#10243E"/>
-<text x="450.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">GROSS PROFIT</text>
-<text x="450.0" y="137.0" font-size="24" fill="#10243E" font-weight="600">$50.7M</text>
-<text x="450.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Revenue less cost</text>
-<rect x="646.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="646.0" y="90.0" width="3.0" height="78.0" fill="#1F7A54"/>
-<text x="660.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">PROFIT MARGIN</text>
-<text x="660.0" y="137.0" font-size="24" fill="#1F7A54" font-weight="600">49.2%</text>
-<text x="660.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Healthy, above the 35% band</text>
-<rect x="856.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="856.0" y="90.0" width="3.0" height="78.0" fill="#B0791C"/>
-<text x="870.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">LOWEST CATEGORY MARGIN</text>
-<text x="870.0" y="137.0" font-size="24" fill="#B0791C" font-weight="600">43.6%</text>
-<text x="870.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Office Supplies</text>
-<rect x="1066.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="1066.0" y="90.0" width="3.0" height="78.0" fill="#B0791C"/>
-<text x="1080.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">PRODUCTS BELOW 35%</text>
-<text x="1080.0" y="137.0" font-size="24" fill="#B0791C" font-weight="600">3</text>
-<text x="1080.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Watch or At Risk status</text>
-<rect x="16.0" y="180.0" width="780.0" height="248.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<text x="30.0" y="202.0" font-size="12.5" fill="#10243E" font-weight="600">Profit and margin by month</text>
-<text x="30.0" y="217.0" font-size="10" fill="#6B7A8D" font-weight="400">Margin holds a narrow band while profit tracks seasonality</text>
-<line x1="76.0" y1="396.0" x2="782.0" y2="396.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="68.0" y="399.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end">$0</text>
-<line x1="76.0" y1="354.0" x2="782.0" y2="354.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="68.0" y="357.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end">$625K</text>
-<line x1="76.0" y1="312.0" x2="782.0" y2="312.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="68.0" y="315.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end">$1.2M</text>
-<line x1="76.0" y1="270.0" x2="782.0" y2="270.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="68.0" y="273.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end">$1.9M</text>
-<line x1="76.0" y1="228.0" x2="782.0" y2="228.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="68.0" y="231.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end">$2.5M</text>
-<text x="76.0" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Jan 2022</text>
-<text x="156.7" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">May 2022</text>
-<text x="237.4" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Sep 2022</text>
-<text x="318.1" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Jan 2023</text>
-<text x="398.7" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">May 2023</text>
-<text x="479.4" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Sep 2023</text>
-<text x="560.1" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Jan 2024</text>
-<text x="640.8" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">May 2024</text>
-<text x="721.5" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Sep 2024</text>
-<text x="782.0" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Dec 2024</text>
-<polyline points="76.0,311.9 96.2,319.3 116.3,302.3 136.5,314.7 156.7,306.3 176.9,298.6 197.0,304.4 217.2,312.1 237.4,318.3 257.5,309.4 277.7,266.1 297.9,247.1 318.1,312.7 338.2,317.8 358.4,303.2 378.6,309.0 398.7,306.7 418.9,322.5 439.1,320.4 459.3,307.1 479.4,304.6 499.6,314.8 519.8,265.4 539.9,270.5 560.1,300.1 580.3,311.3 600.5,312.6 620.6,306.4 640.8,310.5 661.0,296.7 681.1,308.8 701.3,303.4 721.5,304.5 741.7,307.8 761.8,263.1 782.0,256.5" fill="none" stroke="#0F7C86" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-<text x="782.0" y="216.0" font-size="10" fill="#6B7A8D" font-weight="400" text-anchor="end">Monthly margin range 48.3% - 50.0%</text>
-<line x1="636.0" y1="202.0" x2="650.0" y2="202.0" stroke="#0F7C86" stroke-width="2.5"/>
-<text x="655.0" y="205.5" font-size="10" fill="#6B7A8D" font-weight="400">Profit</text>
-<rect x="808.0" y="180.0" width="456.0" height="248.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<text x="822.0" y="202.0" font-size="12.5" fill="#10243E" font-weight="600">Margin by category</text>
-<text x="822.0" y="217.0" font-size="10" fill="#6B7A8D" font-weight="400">Against the 35% healthy threshold</text>
-<text x="822.0" y="250.3" font-size="10.5" fill="#2E3A4B" font-weight="400">Electronics</text>
-<rect x="932.0" y="238.8" width="187.4" height="16.0" fill="#1F7A54" rx="2"/>
-<text x="1126.4" y="250.3" font-size="10" fill="#6B7A8D" font-weight="400">53.6%</text>
-<text x="822.0" y="287.9" font-size="10.5" fill="#2E3A4B" font-weight="400">Software</text>
-<rect x="932.0" y="276.4" width="182.7" height="16.0" fill="#1F7A54" rx="2"/>
-<text x="1121.7" y="287.9" font-size="10" fill="#6B7A8D" font-weight="400">52.3%</text>
-<text x="822.0" y="325.5" font-size="10.5" fill="#2E3A4B" font-weight="400">Accessories</text>
-<rect x="932.0" y="314.0" width="177.6" height="16.0" fill="#1F7A54" rx="2"/>
-<text x="1116.6" y="325.5" font-size="10" fill="#6B7A8D" font-weight="400">50.8%</text>
-<text x="822.0" y="363.1" font-size="10.5" fill="#2E3A4B" font-weight="400">Furniture</text>
-<rect x="932.0" y="351.6" width="155.7" height="16.0" fill="#1F7A54" rx="2"/>
-<text x="1094.7" y="363.1" font-size="10" fill="#6B7A8D" font-weight="400">44.6%</text>
-<text x="822.0" y="400.7" font-size="10.5" fill="#2E3A4B" font-weight="400">Office Supplies</text>
-<rect x="932.0" y="389.2" width="152.4" height="16.0" fill="#1F7A54" rx="2"/>
-<text x="1091.4" y="400.7" font-size="10" fill="#6B7A8D" font-weight="400">43.6%</text>
-<rect x="16.0" y="440.0" width="620.0" height="264.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<text x="30.0" y="462.0" font-size="12.5" fill="#10243E" font-weight="600">Lowest-margin products</text>
-<text x="30.0" y="477.0" font-size="10" fill="#6B7A8D" font-weight="400">Status against the 35% / 20% margin bands</text>
-<text x="30.0" y="498.0" font-size="9" fill="#6B7A8D" font-weight="600" letter-spacing="0.06em">PRODUCT</text>
-<text x="210.0" y="498.0" font-size="9" fill="#6B7A8D" font-weight="600" letter-spacing="0.06em">CATEGORY</text>
-<text x="438.0" y="498.0" font-size="9" fill="#6B7A8D" font-weight="600" text-anchor="end" letter-spacing="0.06em">REVENUE</text>
-<text x="514.0" y="498.0" font-size="9" fill="#6B7A8D" font-weight="600" text-anchor="end" letter-spacing="0.06em">MARGIN</text>
-<text x="514.0" y="498.0" font-size="9" fill="#6B7A8D" font-weight="600" letter-spacing="0.06em">STATUS</text>
-<line x1="30.0" y1="504.0" x2="622.0" y2="504.0" stroke="#10243E" stroke-width="1"/>
-<text x="30.0" y="519.5" font-size="10.5" fill="#2E3A4B" font-weight="400">Ergo Office Chair</text>
-<text x="210.0" y="519.5" font-size="10.5" fill="#2E3A4B" font-weight="400">Office Supplies</text>
-<text x="432.0" y="519.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$4.7M</text>
-<text x="508.0" y="519.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">22.4%</text>
-<rect x="514.0" y="508.0" width="42.0" height="16.0" fill="#B0791C" rx="8" opacity="0.14"/>
-<text x="535.0" y="519.5" font-size="9.5" fill="#B0791C" font-weight="600" text-anchor="middle">Watch</text>
-<line x1="30.0" y1="528.0" x2="622.0" y2="528.0" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="30.0" y="528.0" width="592.0" height="24.0" fill="#EEF2F7"/>
-<text x="30.0" y="543.5" font-size="10.5" fill="#2E3A4B" font-weight="400">Lounge Sofa</text>
-<text x="210.0" y="543.5" font-size="10.5" fill="#2E3A4B" font-weight="400">Furniture</text>
-<text x="432.0" y="543.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$6.6M</text>
-<text x="508.0" y="543.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">28.7%</text>
-<rect x="514.0" y="532.0" width="42.0" height="16.0" fill="#B0791C" rx="8" opacity="0.14"/>
-<text x="535.0" y="543.5" font-size="9.5" fill="#B0791C" font-weight="600" text-anchor="middle">Watch</text>
-<line x1="30.0" y1="552.0" x2="622.0" y2="552.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="30.0" y="567.5" font-size="10.5" fill="#2E3A4B" font-weight="400">Standing Desk</text>
-<text x="210.0" y="567.5" font-size="10.5" fill="#2E3A4B" font-weight="400">Office Supplies</text>
-<text x="432.0" y="567.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$1.2M</text>
-<text x="508.0" y="567.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">29.3%</text>
-<rect x="514.0" y="556.0" width="42.0" height="16.0" fill="#B0791C" rx="8" opacity="0.14"/>
-<text x="535.0" y="567.5" font-size="9.5" fill="#B0791C" font-weight="600" text-anchor="middle">Watch</text>
-<line x1="30.0" y1="576.0" x2="622.0" y2="576.0" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="30.0" y="576.0" width="592.0" height="24.0" fill="#EEF2F7"/>
-<text x="30.0" y="591.5" font-size="10.5" fill="#2E3A4B" font-weight="400">4K Monitor</text>
-<text x="210.0" y="591.5" font-size="10.5" fill="#2E3A4B" font-weight="400">Electronics</text>
-<text x="432.0" y="591.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$2.0M</text>
-<text x="508.0" y="591.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">39.5%</text>
-<rect x="514.0" y="580.0" width="52.4" height="16.0" fill="#1F7A54" rx="8" opacity="0.14"/>
-<text x="540.2" y="591.5" font-size="9.5" fill="#1F7A54" font-weight="600" text-anchor="middle">Healthy</text>
-<line x1="30.0" y1="600.0" x2="622.0" y2="600.0" stroke="#E3E8EF" stroke-width="1"/>
-<text x="30.0" y="615.5" font-size="10.5" fill="#2E3A4B" font-weight="400">Security Suite License</text>
-<text x="210.0" y="615.5" font-size="10.5" fill="#2E3A4B" font-weight="400">Software</text>
-<text x="432.0" y="615.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$1.0M</text>
-<text x="508.0" y="615.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">42.9%</text>
-<rect x="514.0" y="604.0" width="52.4" height="16.0" fill="#1F7A54" rx="8" opacity="0.14"/>
-<text x="540.2" y="615.5" font-size="9.5" fill="#1F7A54" font-weight="600" text-anchor="middle">Healthy</text>
-<line x1="30.0" y1="624.0" x2="622.0" y2="624.0" stroke="#E3E8EF" stroke-width="1"/>
-<rect x="648.0" y="440.0" width="616.0" height="264.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
-<text x="662.0" y="462.0" font-size="12.5" fill="#10243E" font-weight="600">Profit by region</text>
-<text x="662.0" y="499.3" font-size="10.5" fill="#2E3A4B" font-weight="400">Asia Pacific</text>
-<rect x="792.0" y="487.8" width="343.3" height="16.0" fill="#0F7C86" rx="2"/>
-<text x="1142.3" y="499.3" font-size="10" fill="#6B7A8D" font-weight="400">$17.1M</text>
-<text x="662.0" y="542.9" font-size="10.5" fill="#2E3A4B" font-weight="400">Europe</text>
-<rect x="792.0" y="531.4" width="250.4" height="16.0" fill="#0F7C86" rx="2"/>
-<text x="1049.4" y="542.9" font-size="10" fill="#6B7A8D" font-weight="400">$12.5M</text>
-<text x="662.0" y="586.5" font-size="10.5" fill="#2E3A4B" font-weight="400">North America</text>
-<rect x="792.0" y="575.0" width="218.8" height="16.0" fill="#0F7C86" rx="2"/>
-<text x="1017.8" y="586.5" font-size="10" fill="#6B7A8D" font-weight="400">$10.9M</text>
-<text x="662.0" y="630.1" font-size="10.5" fill="#2E3A4B" font-weight="400">Latin America</text>
-<rect x="792.0" y="618.6" width="200.0" height="16.0" fill="#0F7C86" rx="2"/>
-<text x="999.0" y="630.1" font-size="10" fill="#6B7A8D" font-weight="400">$9.9M</text>
-<text x="662.0" y="673.7" font-size="10.5" fill="#2E3A4B" font-weight="400">Unknown / Unassigned</text>
-<rect x="792.0" y="662.2" width="7.2" height="16.0" fill="#0F7C86" rx="2"/>
-<text x="806.2" y="673.7" font-size="10" fill="#6B7A8D" font-weight="400">$360K</text>
+<style>
+  @media (prefers-color-scheme: dark) {
+    .f-canvas{fill:#0D1117}
+    .s-canvas{stroke:#0D1117}
+    .f-surface{fill:#161B22}
+    .s-surface{stroke:#161B22}
+    .f-surfaceAlt{fill:#1C2430}
+    .s-surfaceAlt{stroke:#1C2430}
+    .f-border{fill:#30363D}
+    .s-border{stroke:#30363D}
+    .f-ink{fill:#E6EDF3}
+    .s-ink{stroke:#E6EDF3}
+    .f-inkSoft{fill:#C6D3E1}
+    .s-inkSoft{stroke:#C6D3E1}
+    .f-text{fill:#BAC5D2}
+    .s-text{stroke:#BAC5D2}
+    .f-muted{fill:#8B98A8}
+    .s-muted{stroke:#8B98A8}
+    .f-nav{fill:#152233}
+    .s-nav{stroke:#152233}
+    .f-onNav{fill:#E6EDF3}
+    .s-onNav{stroke:#E6EDF3}
+    .f-navMuted{fill:#8095AC}
+    .s-navMuted{stroke:#8095AC}
+    .f-positive{fill:#46B37F}
+    .s-positive{stroke:#46B37F}
+    .f-caution{fill:#D3A03A}
+    .s-caution{stroke:#D3A03A}
+    .f-negative{fill:#E06C60}
+    .s-negative{stroke:#E06C60}
+    .f-series0{fill:#7FB0E0}
+    .s-series0{stroke:#7FB0E0}
+    .f-series1{fill:#3FB8C4}
+    .s-series1{stroke:#3FB8C4}
+    .f-series2{fill:#6FA8DC}
+    .s-series2{stroke:#6FA8DC}
+    .f-series3{fill:#86C3BF}
+    .s-series3{stroke:#86C3BF}
+    .f-series4{fill:#D9A94A}
+    .s-series4{stroke:#D9A94A}
+    .f-series5{fill:#A99BD6}
+    .s-series5{stroke:#A99BD6}
+    .f-series6{fill:#D08983}
+    .s-series6{stroke:#D08983}
+    .f-series7{fill:#9AA7B4}
+    .s-series7{stroke:#9AA7B4}
+  }
+</style>
+<rect x="0.0" y="0.0" width="1280.0" height="720.0" fill="#F5F7FA" class="f-canvas"/>
+<rect x="0.0" y="0.0" width="1280.0" height="44.0" fill="#10243E" class="f-nav"/>
+<text x="16.0" y="28.0" font-size="14" fill="#FFFFFF" font-weight="600" class="f-onNav">Enterprise Sales &amp; Finance Analytics</text>
+<text x="495.2" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle" class="f-navMuted">Executive Dashboard</text>
+<text x="636.1" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle" class="f-navMuted">Sales Analytics</text>
+<rect x="701.8" y="9.0" width="150.4" height="26.0" fill="#FFFFFF" rx="3" opacity="0.14" class="f-onNav"/>
+<text x="777.1" y="26.0" font-size="11.5" fill="#FFFFFF" font-weight="600" text-anchor="middle" class="f-onNav">Financial Analytics</text>
+<text x="928.1" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle" class="f-navMuted">Customer Analytics</text>
+<text x="1079.2" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle" class="f-navMuted">Inventory Analytics</text>
+<text x="1230.2" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle" class="f-navMuted">Forecast Dashboard</text>
+<rect x="0.0" y="44.0" width="1280.0" height="30.0" fill="#FFFFFF" class="f-surface"/>
+<line x1="0.0" y1="74.0" x2="1280.0" y2="74.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="16.0" y="63.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.09em" class="f-muted">FILTERS</text>
+<text x="74.0" y="63.0" font-size="11" fill="#2E3A4B" font-weight="400" class="f-text">All years  ·  All regions  ·  All categories  ·  All segments</text>
+<text x="1264.0" y="63.0" font-size="10" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">Synced across all pages</text>
+<rect x="16.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<rect x="16.0" y="90.0" width="3.0" height="78.0" fill="#10243E" class="f-series0"/>
+<text x="30.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em" class="f-muted">REVENUE</text>
+<text x="30.0" y="137.0" font-size="24" fill="#10243E" font-weight="600" class="f-ink">$103.1M</text>
+<text x="30.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Net of discounts</text>
+<rect x="226.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<rect x="226.0" y="90.0" width="3.0" height="78.0" fill="#10243E" class="f-series0"/>
+<text x="240.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em" class="f-muted">COST OF GOODS</text>
+<text x="240.0" y="137.0" font-size="24" fill="#10243E" font-weight="600" class="f-ink">$52.4M</text>
+<text x="240.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Direct product cost</text>
+<rect x="436.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<rect x="436.0" y="90.0" width="3.0" height="78.0" fill="#10243E" class="f-series0"/>
+<text x="450.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em" class="f-muted">GROSS PROFIT</text>
+<text x="450.0" y="137.0" font-size="24" fill="#10243E" font-weight="600" class="f-ink">$50.7M</text>
+<text x="450.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Revenue less cost</text>
+<rect x="646.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<rect x="646.0" y="90.0" width="3.0" height="78.0" fill="#1F7A54" class="f-positive"/>
+<text x="660.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em" class="f-muted">PROFIT MARGIN</text>
+<text x="660.0" y="137.0" font-size="24" fill="#1F7A54" font-weight="600" class="f-positive">49.2%</text>
+<text x="660.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Healthy, above the 35% band</text>
+<rect x="856.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<rect x="856.0" y="90.0" width="3.0" height="78.0" fill="#B0791C" class="f-caution"/>
+<text x="870.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em" class="f-muted">LOWEST CATEGORY MARGIN</text>
+<text x="870.0" y="137.0" font-size="24" fill="#B0791C" font-weight="600" class="f-caution">43.6%</text>
+<text x="870.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Office Supplies</text>
+<rect x="1066.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<rect x="1066.0" y="90.0" width="3.0" height="78.0" fill="#B0791C" class="f-caution"/>
+<text x="1080.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em" class="f-muted">PRODUCTS BELOW 35%</text>
+<text x="1080.0" y="137.0" font-size="24" fill="#B0791C" font-weight="600" class="f-caution">3</text>
+<text x="1080.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Watch or At Risk status</text>
+<rect x="16.0" y="180.0" width="780.0" height="248.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<text x="30.0" y="202.0" font-size="12.5" fill="#10243E" font-weight="600" class="f-ink">Profit and margin by month</text>
+<text x="30.0" y="217.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Margin holds a narrow band while profit tracks seasonality</text>
+<line x1="76.0" y1="396.0" x2="782.0" y2="396.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="68.0" y="399.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">$0</text>
+<line x1="76.0" y1="354.0" x2="782.0" y2="354.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="68.0" y="357.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">$625K</text>
+<line x1="76.0" y1="312.0" x2="782.0" y2="312.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="68.0" y="315.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">$1.2M</text>
+<line x1="76.0" y1="270.0" x2="782.0" y2="270.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="68.0" y="273.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">$1.9M</text>
+<line x1="76.0" y1="228.0" x2="782.0" y2="228.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="68.0" y="231.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">$2.5M</text>
+<text x="76.0" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Jan 2022</text>
+<text x="156.7" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">May 2022</text>
+<text x="237.4" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Sep 2022</text>
+<text x="318.1" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Jan 2023</text>
+<text x="398.7" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">May 2023</text>
+<text x="479.4" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Sep 2023</text>
+<text x="560.1" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Jan 2024</text>
+<text x="640.8" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">May 2024</text>
+<text x="721.5" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Sep 2024</text>
+<text x="782.0" y="411.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle" class="f-muted">Dec 2024</text>
+<polyline points="76.0,311.9 96.2,319.3 116.3,302.3 136.5,314.7 156.7,306.3 176.9,298.6 197.0,304.4 217.2,312.1 237.4,318.3 257.5,309.4 277.7,266.1 297.9,247.1 318.1,312.7 338.2,317.8 358.4,303.2 378.6,309.0 398.7,306.7 418.9,322.5 439.1,320.4 459.3,307.1 479.4,304.6 499.6,314.8 519.8,265.4 539.9,270.5 560.1,300.1 580.3,311.3 600.5,312.6 620.6,306.4 640.8,310.5 661.0,296.7 681.1,308.8 701.3,303.4 721.5,304.5 741.7,307.8 761.8,263.1 782.0,256.5" fill="none" stroke="#0F7C86" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" class="s-series1"/>
+<text x="782.0" y="216.0" font-size="10" fill="#6B7A8D" font-weight="400" text-anchor="end" class="f-muted">Monthly margin range 48.3% - 50.0%</text>
+<line x1="636.0" y1="202.0" x2="650.0" y2="202.0" stroke="#0F7C86" stroke-width="2.5" class="s-series1"/>
+<text x="655.0" y="205.5" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Profit</text>
+<rect x="808.0" y="180.0" width="456.0" height="248.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<text x="822.0" y="202.0" font-size="12.5" fill="#10243E" font-weight="600" class="f-ink">Margin by category</text>
+<text x="822.0" y="217.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Against the 35% healthy threshold</text>
+<text x="822.0" y="250.3" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Electronics</text>
+<rect x="932.0" y="238.8" width="187.4" height="16.0" fill="#1F7A54" rx="2" class="f-positive"/>
+<text x="1126.4" y="250.3" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">53.6%</text>
+<text x="822.0" y="287.9" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Software</text>
+<rect x="932.0" y="276.4" width="182.7" height="16.0" fill="#1F7A54" rx="2" class="f-positive"/>
+<text x="1121.7" y="287.9" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">52.3%</text>
+<text x="822.0" y="325.5" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Accessories</text>
+<rect x="932.0" y="314.0" width="177.6" height="16.0" fill="#1F7A54" rx="2" class="f-positive"/>
+<text x="1116.6" y="325.5" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">50.8%</text>
+<text x="822.0" y="363.1" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Furniture</text>
+<rect x="932.0" y="351.6" width="155.7" height="16.0" fill="#1F7A54" rx="2" class="f-positive"/>
+<text x="1094.7" y="363.1" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">44.6%</text>
+<text x="822.0" y="400.7" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Office Supplies</text>
+<rect x="932.0" y="389.2" width="152.4" height="16.0" fill="#1F7A54" rx="2" class="f-positive"/>
+<text x="1091.4" y="400.7" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">43.6%</text>
+<rect x="16.0" y="440.0" width="620.0" height="264.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<text x="30.0" y="462.0" font-size="12.5" fill="#10243E" font-weight="600" class="f-ink">Lowest-margin products</text>
+<text x="30.0" y="477.0" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">Status against the 35% / 20% margin bands</text>
+<text x="30.0" y="498.0" font-size="9" fill="#6B7A8D" font-weight="600" letter-spacing="0.06em" class="f-muted">PRODUCT</text>
+<text x="210.0" y="498.0" font-size="9" fill="#6B7A8D" font-weight="600" letter-spacing="0.06em" class="f-muted">CATEGORY</text>
+<text x="438.0" y="498.0" font-size="9" fill="#6B7A8D" font-weight="600" text-anchor="end" letter-spacing="0.06em" class="f-muted">REVENUE</text>
+<text x="514.0" y="498.0" font-size="9" fill="#6B7A8D" font-weight="600" text-anchor="end" letter-spacing="0.06em" class="f-muted">MARGIN</text>
+<text x="514.0" y="498.0" font-size="9" fill="#6B7A8D" font-weight="600" letter-spacing="0.06em" class="f-muted">STATUS</text>
+<line x1="30.0" y1="504.0" x2="622.0" y2="504.0" stroke="#10243E" stroke-width="1" class="s-ink"/>
+<text x="30.0" y="519.5" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Ergo Office Chair</text>
+<text x="210.0" y="519.5" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Office Supplies</text>
+<text x="432.0" y="519.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$4.7M</text>
+<text x="508.0" y="519.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">22.4%</text>
+<rect x="514.0" y="508.0" width="42.0" height="16.0" fill="#B0791C" rx="8" opacity="0.14" class="f-caution"/>
+<text x="535.0" y="519.5" font-size="9.5" fill="#B0791C" font-weight="600" text-anchor="middle" class="f-caution">Watch</text>
+<line x1="30.0" y1="528.0" x2="622.0" y2="528.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<rect x="30.0" y="528.0" width="592.0" height="24.0" fill="#EEF2F7" class="f-surfaceAlt"/>
+<text x="30.0" y="543.5" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Lounge Sofa</text>
+<text x="210.0" y="543.5" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Furniture</text>
+<text x="432.0" y="543.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$6.6M</text>
+<text x="508.0" y="543.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">28.7%</text>
+<rect x="514.0" y="532.0" width="42.0" height="16.0" fill="#B0791C" rx="8" opacity="0.14" class="f-caution"/>
+<text x="535.0" y="543.5" font-size="9.5" fill="#B0791C" font-weight="600" text-anchor="middle" class="f-caution">Watch</text>
+<line x1="30.0" y1="552.0" x2="622.0" y2="552.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="30.0" y="567.5" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Standing Desk</text>
+<text x="210.0" y="567.5" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Office Supplies</text>
+<text x="432.0" y="567.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$1.2M</text>
+<text x="508.0" y="567.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">29.3%</text>
+<rect x="514.0" y="556.0" width="42.0" height="16.0" fill="#B0791C" rx="8" opacity="0.14" class="f-caution"/>
+<text x="535.0" y="567.5" font-size="9.5" fill="#B0791C" font-weight="600" text-anchor="middle" class="f-caution">Watch</text>
+<line x1="30.0" y1="576.0" x2="622.0" y2="576.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<rect x="30.0" y="576.0" width="592.0" height="24.0" fill="#EEF2F7" class="f-surfaceAlt"/>
+<text x="30.0" y="591.5" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">4K Monitor</text>
+<text x="210.0" y="591.5" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Electronics</text>
+<text x="432.0" y="591.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$2.0M</text>
+<text x="508.0" y="591.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">39.5%</text>
+<rect x="514.0" y="580.0" width="52.4" height="16.0" fill="#1F7A54" rx="8" opacity="0.14" class="f-positive"/>
+<text x="540.2" y="591.5" font-size="9.5" fill="#1F7A54" font-weight="600" text-anchor="middle" class="f-positive">Healthy</text>
+<line x1="30.0" y1="600.0" x2="622.0" y2="600.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<text x="30.0" y="615.5" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Security Suite License</text>
+<text x="210.0" y="615.5" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Software</text>
+<text x="432.0" y="615.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">$1.0M</text>
+<text x="508.0" y="615.5" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end" class="f-text">42.9%</text>
+<rect x="514.0" y="604.0" width="52.4" height="16.0" fill="#1F7A54" rx="8" opacity="0.14" class="f-positive"/>
+<text x="540.2" y="615.5" font-size="9.5" fill="#1F7A54" font-weight="600" text-anchor="middle" class="f-positive">Healthy</text>
+<line x1="30.0" y1="624.0" x2="622.0" y2="624.0" stroke="#E3E8EF" stroke-width="1" class="s-border"/>
+<rect x="648.0" y="440.0" width="616.0" height="264.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1" class="f-surface s-border"/>
+<text x="662.0" y="462.0" font-size="12.5" fill="#10243E" font-weight="600" class="f-ink">Profit by region</text>
+<text x="662.0" y="499.3" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Asia Pacific</text>
+<rect x="792.0" y="487.8" width="343.3" height="16.0" fill="#0F7C86" rx="2" class="f-series1"/>
+<text x="1142.3" y="499.3" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">$17.1M</text>
+<text x="662.0" y="542.9" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Europe</text>
+<rect x="792.0" y="531.4" width="250.4" height="16.0" fill="#0F7C86" rx="2" class="f-series1"/>
+<text x="1049.4" y="542.9" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">$12.5M</text>
+<text x="662.0" y="586.5" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">North America</text>
+<rect x="792.0" y="575.0" width="218.8" height="16.0" fill="#0F7C86" rx="2" class="f-series1"/>
+<text x="1017.8" y="586.5" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">$10.9M</text>
+<text x="662.0" y="630.1" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Latin America</text>
+<rect x="792.0" y="618.6" width="200.0" height="16.0" fill="#0F7C86" rx="2" class="f-series1"/>
+<text x="999.0" y="630.1" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">$9.9M</text>
+<text x="662.0" y="673.7" font-size="10.5" fill="#2E3A4B" font-weight="400" class="f-text">Unknown / Unassigned</text>
+<rect x="792.0" y="662.2" width="7.2" height="16.0" fill="#0F7C86" rx="2" class="f-series1"/>
+<text x="806.2" y="673.7" font-size="10" fill="#6B7A8D" font-weight="400" class="f-muted">$360K</text>
 </svg>
