@@ -1,22 +1,60 @@
 // ============================================================
 // calculated_columns.dax
-// Calculated columns to add in Power BI Desktop (Modeling > New Column)
+// Calculated columns to add in Power BI Desktop (Modeling > New Column).
+// Add them to the table named in each heading.
 // ============================================================
 
+// ---------- DimDate ----------
+
+// A monotonic month counter across the whole calendar, starting at 0.
+// Required by Linear Trend Revenue: DimDate[month] restarts each January, so
+// regressing against it fits the shape of a calendar year instead of the
+// trend across the series.
+DimDate[Month Index] =
+VAR FirstDate = MINX ( ALL ( DimDate ), DimDate[full_date] )
+RETURN
+    DATEDIFF (
+        DATE ( YEAR ( FirstDate ), MONTH ( FirstDate ), 1 ),
+        DATE ( YEAR ( DimDate[full_date] ), MONTH ( DimDate[full_date] ), 1 ),
+        MONTH
+    )
+
+DimDate[Month-Year] =
+FORMAT ( DimDate[full_date], "MMM yyyy" )
+
+// Sort DimDate[Month-Year] by this column (Column tools > Sort by column),
+// otherwise every date axis and slicer sorts alphabetically - Apr, Aug, Dec.
+DimDate[Month-Year Sort] =
+DimDate[year] * 100 + DimDate[month]
+
+DimDate[Quarter Label] =
+"Q" & DimDate[quarter] & " " & DimDate[year]
+
+DimDate[Quarter Sort] =
+DimDate[year] * 10 + DimDate[quarter]
+
+
 // ---------- DimCustomer ----------
+
 DimCustomer[Customer Tenure (Months)] =
 DATEDIFF ( DimCustomer[signup_date], TODAY (), MONTH )
 
+// Commercial tiering used by the Customer Analytics page. Tier 1 covers the
+// account-managed segments, Tier 3 the self-serve tail. "Unclassified" is a
+// data-quality bucket for customers whose source segment arrived blank - it
+// is kept visible rather than folded into a real tier.
 DimCustomer[Customer Tier] =
 SWITCH (
     TRUE (),
-    DimCustomer[segment] = "Enterprise", "Tier 1",
-    DimCustomer[segment] = "Government", "Tier 1",
-    DimCustomer[segment] = "SMB", "Tier 2",
-    "Tier 3"
+    DimCustomer[segment] IN { "Enterprise", "Government" }, "Tier 1 - Managed",
+    DimCustomer[segment] = "SMB", "Tier 2 - Mid-market",
+    DimCustomer[segment] = "Unclassified", "Unclassified",
+    "Tier 3 - Self-serve"
 )
 
+
 // ---------- DimProduct ----------
+
 DimProduct[Price Band] =
 SWITCH (
     TRUE (),
@@ -25,6 +63,9 @@ SWITCH (
     "Budget"
 )
 
+// List-price margin bands. These use the catalogue margin, which is not the
+// same as realised margin after discounting - the Margin Status measure
+// reports the realised figure and is what the Financial Analytics page shows.
 DimProduct[Margin Band] =
 SWITCH (
     TRUE (),
@@ -33,14 +74,25 @@ SWITCH (
     "Low Margin"
 )
 
-// ---------- DimDate ----------
-DimDate[Month-Year] =
-FORMAT ( DimDate[full_date], "MMM YYYY" )
 
-DimDate[Quarter Label] =
-"Q" & DimDate[quarter] & " " & DimDate[year]
+// ---------- DimInventory ----------
+
+// Headroom above the reorder trigger; negative means the trigger is breached.
+// Sort the replenishment watchlist ascending on this column.
+DimInventory[Stock vs Reorder] =
+DimInventory[stock_quantity] - DimInventory[reorder_level]
+
+DimInventory[Risk Flag] =
+SWITCH (
+    TRUE (),
+    DimInventory[stock_quantity] <= DimInventory[reorder_level], "Reorder Now",
+    DimInventory[stock_quantity] <= DimInventory[reorder_level] * 1.25, "At Risk",
+    "OK"
+)
+
 
 // ---------- FactSales ----------
+
 FactSales[Order Size Category] =
 SWITCH (
     TRUE (),

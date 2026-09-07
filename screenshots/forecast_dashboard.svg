@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif">
+<title>Forecast Dashboard</title>
+<rect x="0.0" y="0.0" width="1280.0" height="720.0" fill="#F5F7FA"/>
+<rect x="0.0" y="0.0" width="1280.0" height="44.0" fill="#10243E"/>
+<text x="16.0" y="28.0" font-size="14" fill="#FFFFFF" font-weight="600">Enterprise Sales &amp; Finance Analytics</text>
+<text x="495.2" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle">Executive Dashboard</text>
+<text x="636.1" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle">Sales Analytics</text>
+<text x="777.1" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle">Financial Analytics</text>
+<text x="928.1" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle">Customer Analytics</text>
+<text x="1079.2" y="26.0" font-size="11.5" fill="#9FB3C8" font-weight="400" text-anchor="middle">Inventory Analytics</text>
+<rect x="1158.4" y="9.0" width="143.7" height="26.0" fill="#FFFFFF" rx="3" opacity="0.14"/>
+<text x="1230.2" y="26.0" font-size="11.5" fill="#FFFFFF" font-weight="600" text-anchor="middle">Forecast Dashboard</text>
+<rect x="0.0" y="44.0" width="1280.0" height="30.0" fill="#FFFFFF"/>
+<line x1="0.0" y1="74.0" x2="1280.0" y2="74.0" stroke="#E3E8EF" stroke-width="1"/>
+<text x="16.0" y="63.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.09em">FILTERS</text>
+<text x="74.0" y="63.0" font-size="11" fill="#2E3A4B" font-weight="400">All years  ·  All regions  ·  All categories  ·  All segments</text>
+<text x="1264.0" y="63.0" font-size="10" fill="#6B7A8D" font-weight="400" text-anchor="end">Synced across all pages</text>
+<rect x="16.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
+<rect x="16.0" y="90.0" width="3.0" height="78.0" fill="#10243E"/>
+<text x="30.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">LAST ACTUAL MONTH</text>
+<text x="30.0" y="137.0" font-size="24" fill="#10243E" font-weight="600">$4.3M</text>
+<text x="30.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Dec 2024</text>
+<rect x="226.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
+<rect x="226.0" y="90.0" width="3.0" height="78.0" fill="#10243E"/>
+<text x="240.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">NEXT MONTH PROJECTED</text>
+<text x="240.0" y="137.0" font-size="24" fill="#10243E" font-weight="600">$3.0M</text>
+<text x="240.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Jan 2025</text>
+<rect x="436.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
+<rect x="436.0" y="90.0" width="3.0" height="78.0" fill="#10243E"/>
+<text x="450.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">6-MONTH PROJECTION</text>
+<text x="450.0" y="137.0" font-size="24" fill="#10243E" font-weight="600">$17.8M</text>
+<text x="450.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Jan 2025 to Jun 2025</text>
+<rect x="646.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
+<rect x="646.0" y="90.0" width="3.0" height="78.0" fill="#10243E"/>
+<text x="660.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">MODELLED RANGE</text>
+<text x="660.0" y="137.0" font-size="24" fill="#10243E" font-weight="600">$15.2M - $20.3M</text>
+<text x="660.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">95% of in-sample spread</text>
+<rect x="856.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
+<rect x="856.0" y="90.0" width="3.0" height="78.0" fill="#1F7A54"/>
+<text x="870.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">VS SAME MONTHS LAST YEAR</text>
+<text x="870.0" y="137.0" font-size="24" fill="#1F7A54" font-weight="600">+8.8%</text>
+<text x="870.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">Like-for-like seasonality</text>
+<rect x="1066.0" y="90.0" width="198.0" height="78.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
+<rect x="1066.0" y="90.0" width="3.0" height="78.0" fill="#10243E"/>
+<text x="1080.0" y="110.0" font-size="9.5" fill="#6B7A8D" font-weight="600" letter-spacing="0.08em">UNDERLYING TREND</text>
+<text x="1080.0" y="137.0" font-size="24" fill="#10243E" font-weight="600">$14,566/mo</text>
+<text x="1080.0" y="155.0" font-size="10" fill="#6B7A8D" font-weight="400">OLS slope, revenue</text>
+<rect x="16.0" y="180.0" width="1248.0" height="330.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
+<text x="30.0" y="202.0" font-size="12.5" fill="#10243E" font-weight="600">Revenue: actuals, trend and projection</text>
+<text x="30.0" y="217.0" font-size="10" fill="#6B7A8D" font-weight="400">Solid line is recorded revenue; dashed line and shaded band are modelled</text>
+<line x1="76.0" y1="478.0" x2="1250.0" y2="478.0" stroke="#E3E8EF" stroke-width="1"/>
+<text x="68.0" y="481.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end">$0</text>
+<line x1="76.0" y1="415.5" x2="1250.0" y2="415.5" stroke="#E3E8EF" stroke-width="1"/>
+<text x="68.0" y="419.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end">$1.2M</text>
+<line x1="76.0" y1="353.0" x2="1250.0" y2="353.0" stroke="#E3E8EF" stroke-width="1"/>
+<text x="68.0" y="356.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end">$2.5M</text>
+<line x1="76.0" y1="290.5" x2="1250.0" y2="290.5" stroke="#E3E8EF" stroke-width="1"/>
+<text x="68.0" y="294.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end">$3.8M</text>
+<line x1="76.0" y1="228.0" x2="1250.0" y2="228.0" stroke="#E3E8EF" stroke-width="1"/>
+<text x="68.0" y="231.5" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="end">$5.0M</text>
+<text x="76.0" y="493.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Jan 2022</text>
+<text x="190.5" y="493.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">May 2022</text>
+<text x="305.1" y="493.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Sep 2022</text>
+<text x="419.6" y="493.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Jan 2023</text>
+<text x="534.1" y="493.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">May 2023</text>
+<text x="648.7" y="493.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Sep 2023</text>
+<text x="763.2" y="493.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Jan 2024</text>
+<text x="877.8" y="493.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">May 2024</text>
+<text x="992.3" y="493.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Sep 2024</text>
+<text x="1106.8" y="493.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Jan 2025</text>
+<text x="1221.4" y="493.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">May 2025</text>
+<text x="1250.0" y="493.0" font-size="9.5" fill="#6B7A8D" font-weight="400" text-anchor="middle">Jun 2025</text>
+<polygon points="1078.2,264.9 1106.8,306.6 1135.5,321.0 1164.1,303.8 1192.7,311.0 1221.4,305.5 1250.0,303.6 1250.0,346.0 1221.4,348.0 1192.7,353.4 1164.1,346.2 1135.5,363.4 1106.8,349.0 1078.2,264.9" fill="#0F7C86" opacity="0.13"/>
+<line x1="1078.2" y1="228.0" x2="1078.2" y2="478.0" stroke="#6B7A8D" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="1084.2" y="238.0" font-size="9.5" fill="#6B7A8D" font-weight="600">Last actual</text>
+<polyline points="76.0,351.0 104.6,362.6 133.3,337.5 161.9,356.8 190.5,341.6 219.2,332.3 247.8,339.4 276.4,350.3 305.1,359.8 333.7,346.4 362.3,281.2 391.0,253.9 419.6,352.3 448.2,358.4 476.9,338.4 505.5,344.8 534.1,342.2 562.8,365.6 591.4,363.6 620.0,345.0 648.7,341.9 677.3,355.1 706.0,281.5 734.6,288.7 763.2,330.2 791.9,351.1 820.5,351.6 849.1,343.3 877.8,347.5 906.4,327.4 935.0,347.0 963.7,339.1 992.3,338.6 1020.9,344.6 1049.6,276.7 1078.2,264.9" fill="none" stroke="#10243E" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="76.0,351.0 104.6,356.8 133.3,350.4 161.9,352.3 190.5,345.3 219.2,343.6 247.8,337.8 276.4,340.7 305.1,349.8 333.7,352.2 362.3,329.1 391.0,293.8 419.6,295.8 448.2,321.5 476.9,349.7 505.5,347.2 534.1,341.8 562.8,350.9 591.4,357.1 620.0,358.0 648.7,350.1 677.3,347.3 706.0,326.1 734.6,308.4 763.2,300.1 791.9,323.3 820.5,344.3 849.1,348.7 877.8,347.4 906.4,339.4 935.0,340.6 963.7,337.8 992.3,341.6 1020.9,340.8 1049.6,320.0 1078.2,295.4" fill="none" stroke="#6FA8A5" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="76.0,347.5 104.6,346.8 133.3,346.1 161.9,345.3 190.5,344.6 219.2,343.9 247.8,343.2 276.4,342.4 305.1,341.7 333.7,341.0 362.3,340.2 391.0,339.5 419.6,338.8 448.2,338.1 476.9,337.3 505.5,336.6 534.1,335.9 562.8,335.1 591.4,334.4 620.0,333.7 648.7,333.0 677.3,332.2 706.0,331.5 734.6,330.8 763.2,330.0 791.9,329.3 820.5,328.6 849.1,327.9 877.8,327.1 906.4,326.4 935.0,325.7 963.7,325.0 992.3,324.2 1020.9,323.5 1049.6,322.8 1078.2,322.0 1106.8,321.3 1135.5,320.6 1164.1,319.9 1192.7,319.1 1221.4,318.4 1250.0,317.7" fill="none" stroke="#C08A2E" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3"/>
+<polyline points="1078.2,264.9 1106.8,327.8 1135.5,342.2 1164.1,325.0 1192.7,332.2 1221.4,326.8 1250.0,324.8" fill="none" stroke="#0F7C86" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3"/>
+<line x1="316.0" y1="204.0" x2="330.0" y2="204.0" stroke="#10243E" stroke-width="2.5"/>
+<text x="335.0" y="207.5" font-size="10" fill="#6B7A8D" font-weight="400">Actual revenue</text>
+<line x1="423.8" y1="204.0" x2="437.8" y2="204.0" stroke="#6FA8A5" stroke-width="2.5"/>
+<text x="442.8" y="207.5" font-size="10" fill="#6B7A8D" font-weight="400">3-month average</text>
+<line x1="536.8" y1="204.0" x2="550.8" y2="204.0" stroke="#C08A2E" stroke-width="2.5" stroke-dasharray="3 2"/>
+<text x="555.8" y="207.5" font-size="10" fill="#6B7A8D" font-weight="400">Linear trend</text>
+<line x1="634.2" y1="204.0" x2="648.2" y2="204.0" stroke="#0F7C86" stroke-width="2.5" stroke-dasharray="3 2"/>
+<text x="653.2" y="207.5" font-size="10" fill="#6B7A8D" font-weight="400">Projection and range</text>
+<rect x="16.0" y="522.0" width="700.0" height="182.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
+<text x="30.0" y="544.0" font-size="12.5" fill="#10243E" font-weight="600">Monthly projection</text>
+<text x="30.0" y="566.0" font-size="9" fill="#6B7A8D" font-weight="600" letter-spacing="0.06em">MONTH</text>
+<text x="300.0" y="566.0" font-size="9" fill="#6B7A8D" font-weight="600" text-anchor="end" letter-spacing="0.06em">LOW</text>
+<text x="450.0" y="566.0" font-size="9" fill="#6B7A8D" font-weight="600" text-anchor="end" letter-spacing="0.06em">PROJECTED</text>
+<text x="590.0" y="566.0" font-size="9" fill="#6B7A8D" font-weight="600" text-anchor="end" letter-spacing="0.06em">HIGH</text>
+<text x="720.0" y="566.0" font-size="9" fill="#6B7A8D" font-weight="600" text-anchor="end" letter-spacing="0.06em">TREND</text>
+<line x1="30.0" y1="572.0" x2="702.0" y2="572.0" stroke="#10243E" stroke-width="1"/>
+<text x="30.0" y="586.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Jan 2025</text>
+<text x="294.0" y="586.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$2,579,045</text>
+<text x="444.0" y="586.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,003,324</text>
+<text x="584.0" y="586.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,427,603</text>
+<text x="714.0" y="586.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,133,819</text>
+<line x1="30.0" y1="593.0" x2="702.0" y2="593.0" stroke="#E3E8EF" stroke-width="1"/>
+<rect x="30.0" y="593.0" width="672.0" height="21.0" fill="#EEF2F7"/>
+<text x="30.0" y="607.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Feb 2025</text>
+<text x="294.0" y="607.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$2,291,221</text>
+<text x="444.0" y="607.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$2,715,500</text>
+<text x="584.0" y="607.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,139,779</text>
+<text x="714.0" y="607.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,148,385</text>
+<line x1="30.0" y1="614.0" x2="702.0" y2="614.0" stroke="#E3E8EF" stroke-width="1"/>
+<text x="30.0" y="628.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Mar 2025</text>
+<text x="294.0" y="628.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$2,636,284</text>
+<text x="444.0" y="628.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,060,563</text>
+<text x="584.0" y="628.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,484,841</text>
+<text x="714.0" y="628.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,162,951</text>
+<line x1="30.0" y1="635.0" x2="702.0" y2="635.0" stroke="#E3E8EF" stroke-width="1"/>
+<rect x="30.0" y="635.0" width="672.0" height="21.0" fill="#EEF2F7"/>
+<text x="30.0" y="649.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Apr 2025</text>
+<text x="294.0" y="649.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$2,491,416</text>
+<text x="444.0" y="649.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$2,915,694</text>
+<text x="584.0" y="649.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,339,973</text>
+<text x="714.0" y="649.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,177,516</text>
+<line x1="30.0" y1="656.0" x2="702.0" y2="656.0" stroke="#E3E8EF" stroke-width="1"/>
+<text x="30.0" y="670.0" font-size="10.5" fill="#2E3A4B" font-weight="400">May 2025</text>
+<text x="294.0" y="670.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$2,600,527</text>
+<text x="444.0" y="670.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,024,806</text>
+<text x="584.0" y="670.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,449,085</text>
+<text x="714.0" y="670.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,192,082</text>
+<line x1="30.0" y1="677.0" x2="702.0" y2="677.0" stroke="#E3E8EF" stroke-width="1"/>
+<rect x="30.0" y="677.0" width="672.0" height="21.0" fill="#EEF2F7"/>
+<text x="30.0" y="691.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Jun 2025</text>
+<text x="294.0" y="691.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$2,639,532</text>
+<text x="444.0" y="691.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,063,811</text>
+<text x="584.0" y="691.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,488,090</text>
+<text x="714.0" y="691.0" font-size="10.5" fill="#2E3A4B" font-weight="400" text-anchor="end">$3,206,647</text>
+<line x1="30.0" y1="698.0" x2="702.0" y2="698.0" stroke="#E3E8EF" stroke-width="1"/>
+<rect x="728.0" y="522.0" width="536.0" height="182.0" fill="#FFFFFF" rx="3" stroke="#E3E8EF" stroke-width="1"/>
+<text x="742.0" y="544.0" font-size="12.5" fill="#10243E" font-weight="600">How to read this</text>
+<rect x="742.0" y="552.0" width="2.5" height="30.0" fill="#6B7A8D"/>
+<text x="754.0" y="562.0" font-size="11" fill="#1B3A5C" font-weight="600">Method</text>
+<text x="754.0" y="576.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Least-squares trend on monthly revenue, scaled by a month-of-year seasonal index derived</text>
+<text x="754.0" y="589.0" font-size="10.5" fill="#2E3A4B" font-weight="400">from the same history.</text>
+<rect x="742.0" y="608.0" width="2.5" height="30.0" fill="#6B7A8D"/>
+<text x="754.0" y="618.0" font-size="11" fill="#1B3A5C" font-weight="600">Range</text>
+<text x="754.0" y="632.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Plus or minus 1.96 residual standard deviations of the in-sample fit - historical</text>
+<text x="754.0" y="645.0" font-size="10.5" fill="#2E3A4B" font-weight="400">dispersion, not a confidence guarantee.</text>
+<rect x="742.0" y="664.0" width="2.5" height="30.0" fill="#6B7A8D"/>
+<text x="754.0" y="674.0" font-size="11" fill="#1B3A5C" font-weight="600">Assumption</text>
+<text x="754.0" y="688.0" font-size="10.5" fill="#2E3A4B" font-weight="400">Pricing, product mix and market conditions hold. Treat as a planning input, not a</text>
+<text x="754.0" y="701.0" font-size="10.5" fill="#2E3A4B" font-weight="400">commitment.</text>
+</svg>

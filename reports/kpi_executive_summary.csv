@@ -1,0 +1,14 @@
+metric,value,format,definition
+Total Revenue,103116814.71,currency,Sum of net revenue across all order lines
+Total Profit,50733132.18000001,currency,Net revenue less total cost
+Profit Margin %,49.19966963940755,percent,Total profit / total revenue
+Total Orders,19665.0,integer,Distinct order identifiers
+Total Customers,500.0,integer,Distinct customers with at least one order
+Average Order Value,5243.672245614035,currency,Total revenue / total orders
+Revenue Growth MoM %,5.89,percent,"Revenue change, 2024-11 to 2024-12"
+Revenue Growth YoY %,6.956360099408698,percent,"Revenue change, 2023 to 2024"
+Repeat Customer Rate %,100.0,percent,Customers with more than one order / all customers
+Units Sold,137664.0,integer,Sum of order-line quantity
+Inventory Turnover Ratio,21.03346065699007,ratio,Units sold / units on hand
+Products At Reorder Level,1.0,integer,Stock on hand at or below the reorder trigger
+Customers On File,500.0,integer,"Rows in DimCustomer, including customers who have not yet ordered"

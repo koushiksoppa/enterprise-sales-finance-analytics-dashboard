@@ -1,11 +1,11 @@
-customer_id,customer_name,segment,total_revenue,total_orders
-C00241,Ava Garcia,Enterprise,338727.3,56
-C00019,Olivia Dubois,Enterprise,334890.02,55
-C00498,James Johnson,SMB,316895.09,52
-C00411,Lucas Brown,SMB,316101.6,50
-C00242,Wei Brown,Enterprise,312848.52,47
-C00345,Liam Smith,Enterprise,312063.38,54
-C00380,Emma Kumar,Enterprise,310959.95,51
-C00396,Sofia Kumar,Enterprise,310080.21,61
-C00022,Sofia Novak,Consumer,305272.59,48
-C00384,James Wang,SMB,303281.38,41
+customer_id,customer_name,segment,region_name,total_revenue,total_profit,total_orders,avg_order_value,profit_margin_pct
+C00241,Ava Garcia,Enterprise,North America,338727.3,173974.19,56,6048.7,51.36
+C00019,Olivia Dubois,Enterprise,North America,334890.02,169759.56,55,6088.91,50.69
+C00498,James Johnson,SMB,Asia Pacific,316895.09,164101.2,52,6094.14,51.78
+C00411,Lucas Brown,SMB,Asia Pacific,316101.6,159539.61,50,6322.03,50.47
+C00242,Wei Brown,Enterprise,Latin America,312848.52,157769.14,47,6656.35,50.43
+C00345,Liam Smith,Enterprise,Asia Pacific,312063.38,154929.8,54,5778.95,49.65
+C00380,Emma Kumar,Enterprise,Asia Pacific,310959.95,151095.92,51,6097.25,48.59
+C00396,Sofia Kumar,Enterprise,Latin America,310080.21,141856.91,61,5083.28,45.75
+C00022,Sofia Novak,Consumer,Latin America,305272.59,154936.31,48,6359.85,50.75
+C00384,James Wang,SMB,North America,303281.38,157097.12,41,7397.11,51.8

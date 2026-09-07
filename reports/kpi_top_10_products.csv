@@ -1,11 +1,11 @@
-product_id,product_name,category,total_revenue,total_profit,units_sold
-P0004,Mechanical Keyboard,Electronics,10574741.99,6215427.13,6541
-P0014,Design Studio License,Software,9784358.01,5459878.01,5825
-P0012,Cloud Backup Plan,Software,8290435.93,4385434.05,6214
-P0020,Laptop Sleeve,Accessories,8183311.07,3731000.9,6611
-P0008,Desk Lamp,Office Supplies,8082094.67,4274276.24,6591
-P0001,Laptop Pro 14,Electronics,6634352.55,3495259.11,5913
-P0017,Lounge Sofa,Furniture,6591836.73,1890225.72,6141
-P0015,Bookshelf Unit,Furniture,6340902.08,3450857.76,6056
-P0021,Webcam HD,Accessories,5780968.29,3343100.77,5888
-P0018,Storage Cabinet,Furniture,4825050.05,2269694.75,6285
+product_id,product_name,category,total_revenue,total_profit,units_sold,total_orders,profit_margin_pct
+P0004,Mechanical Keyboard,Electronics,10574741.99,6215427.13,6541,917,58.78
+P0014,Design Studio License,Software,9784358.01,5459878.01,5825,837,55.8
+P0012,Cloud Backup Plan,Software,8290435.93,4385434.05,6214,872,52.9
+P0020,Laptop Sleeve,Accessories,8183311.07,3731000.9,6611,949,45.59
+P0008,Desk Lamp,Office Supplies,8082094.67,4274276.24,6591,924,52.89
+P0001,Laptop Pro 14,Electronics,6634352.55,3495259.11,5913,839,52.68
+P0017,Lounge Sofa,Furniture,6591836.73,1890225.72,6141,901,28.68
+P0015,Bookshelf Unit,Furniture,6340902.08,3450857.76,6056,881,54.42
+P0021,Webcam HD,Accessories,5780968.29,3343100.77,5888,848,57.83
+P0018,Storage Cabinet,Furniture,4825050.05,2269694.75,6285,888,47.04

@@ -1,0 +1,12 @@
+region_name,country,region_id,total_revenue,total_profit,total_orders,total_customers,avg_order_value,profit_margin_pct
+Asia Pacific,Japan,R08,14165989.27,6982013.88,2691,68,5264.21,49.29
+North America,Canada,R02,12704924.05,6226662.21,2402,61,5289.31,49.01
+Latin America,Brazil,R09,11067301.04,5454377.4,2051,52,5396.05,49.28
+Asia Pacific,India,R06,10807337.07,5267303.91,2072,51,5215.9,48.74
+Europe,United Kingdom,R04,9993154.37,4943261.99,1847,48,5410.48,49.47
+Asia Pacific,Australia,R07,9832097.45,4830307.3,1912,49,5142.31,49.13
+North America,USA,R01,9422685.73,4659753.27,1825,45,5163.12,49.45
+Latin America,Mexico,R10,9198621.81,4493491.76,1799,46,5113.19,48.85
+Europe,Germany,R03,8811645.94,4333497.37,1690,43,5213.99,49.18
+Europe,France,R05,6399017.94,3182010.53,1229,33,5206.69,49.73
+Unknown / Unassigned,N/A,R00,714040.04,360452.56,147,4,4857.42,50.48

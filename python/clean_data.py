@@ -129,6 +129,12 @@ def build_date_dim(sales: pd.DataFrame) -> pd.DataFrame:
 
 
 def build_kpi_summary(fact_sales: pd.DataFrame, customers: pd.DataFrame, regions: pd.DataFrame) -> pd.DataFrame:
+    """A region-grain summary written alongside the star schema.
+
+    Grouped on region_name, not region_id: DimRegion is at country grain, so
+    region_name repeats and grouping by id would split one region into several.
+    The richer version of this table is reports/kpi_regional_performance.csv.
+    """
     logger.info("Building KPI summary table")
     merged = fact_sales.merge(customers[["customer_id", "region_id"]], on="customer_id", how="left")
     merged = merged.merge(regions[["region_id", "region_name"]], on="region_id", how="left")
@@ -144,6 +150,9 @@ def build_kpi_summary(fact_sales: pd.DataFrame, customers: pd.DataFrame, regions
         )
         .reset_index()
     )
+    summary["total_revenue"] = summary["total_revenue"].round(2)
+    summary["total_profit"] = summary["total_profit"].round(2)
+    summary["avg_order_value"] = summary["avg_order_value"].round(2)
     summary["profit_margin_pct"] = (summary["total_profit"] / summary["total_revenue"]).round(4)
     summary = summary.sort_values("total_revenue", ascending=False).reset_index(drop=True)
     return summary

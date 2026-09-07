@@ -3,13 +3,26 @@
 // DAX measures for the Enterprise Sales & Finance Analytics model.
 // Paste each measure into Power BI Desktop:
 //   Modeling > New Measure  (create in the FactSales table)
-// Assumes relationships: FactSales[date_id] -> DimDate[date_id],
-//   FactSales[customer_id] -> DimCustomer[customer_id],
-//   FactSales[product_id] -> DimProduct[product_id],
-//   DimCustomer[region_id] -> DimRegion[region_id]
+//
+// Assumes relationships:
+//   FactSales[date_id]      -> DimDate[date_id]
+//   FactSales[customer_id]  -> DimCustomer[customer_id]
+//   FactSales[product_id]   -> DimProduct[product_id]
+//   DimCustomer[region_id]  -> DimRegion[region_id]
+//   DimInventory[product_id]-> DimProduct[product_id]
+//   DimCustomer[signup_date]-> DimDate[full_date]   (INACTIVE)
+//
+// Every measure here has a T-SQL equivalent in sql/03_analysis_queries.sql
+// and a Python equivalent in python/build_kpis.py. The three are kept in step
+// through docs/KPI_DEFINITIONS.md - change a definition there first.
+//
+// Suggested format strings are noted per measure. Set them in the Measure
+// tools ribbon; the report reads much better with tabular figures and no
+// spurious decimal places.
 // ============================================================
 
 // ---------- CORE KPIs ----------
+// Format: Currency, 0 decimals, thousands separator
 
 Total Revenue =
 SUM ( FactSales[net_revenue] )
@@ -20,17 +33,12 @@ SUM ( FactSales[profit] )
 Total Cost =
 SUM ( FactSales[total_cost] )
 
+// Format: Whole number, thousands separator
 Total Orders =
 DISTINCTCOUNT ( FactSales[order_id] )
 
 Total Units Sold =
 SUM ( FactSales[quantity] )
-
-Profit Margin % =
-DIVIDE ( [Total Profit], [Total Revenue], 0 )
-
-Average Order Value =
-DIVIDE ( [Total Revenue], [Total Orders], 0 )
 
 Total Customers =
 DISTINCTCOUNT ( FactSales[customer_id] )
@@ -38,14 +46,45 @@ DISTINCTCOUNT ( FactSales[customer_id] )
 Active Products =
 DISTINCTCOUNT ( FactSales[product_id] )
 
+// Format: Percentage, 1 decimal.
+// Revenue-weighted, not the average of row-level margins - averaging
+// profit_margin_pct across order lines would weight a $40 sale the same as a
+// $40,000 one and disagree with the SQL and Python figures.
+Profit Margin % =
+DIVIDE ( [Total Profit], [Total Revenue], 0 )
+
+// Format: Currency, 0 decimals
+Average Order Value =
+DIVIDE ( [Total Revenue], [Total Orders], 0 )
+
+Revenue Per Customer =
+DIVIDE ( [Total Revenue], [Total Customers], 0 )
+
+// Format: Decimal, 1 place
+Orders Per Customer =
+DIVIDE ( [Total Orders], [Total Customers], 0 )
+
+// Format: Percentage, 1 decimal. Share of the visual's unfiltered total -
+// ALLSELECTED so it respects slicers but ignores the current row.
+Revenue Share % =
+DIVIDE ( [Total Revenue], CALCULATE ( [Total Revenue], ALLSELECTED () ), 0 )
+
+
 // ---------- TIME INTELLIGENCE ----------
-// Requires DimDate marked as Date Table, DimDate[full_date] as the Date column.
+// Requires DimDate marked as a Date Table on DimDate[full_date].
 
 Revenue PY =
 CALCULATE ( [Total Revenue], SAMEPERIODLASTYEAR ( DimDate[full_date] ) )
 
+Profit PY =
+CALCULATE ( [Total Profit], SAMEPERIODLASTYEAR ( DimDate[full_date] ) )
+
+// Format: Percentage, 1 decimal, with a +/- sign
 Revenue YoY % =
-DIVIDE ( [Total Revenue] - [Revenue PY], [Revenue PY], 0 )
+DIVIDE ( [Total Revenue] - [Revenue PY], [Revenue PY] )
+
+Revenue YoY Variance =
+[Total Revenue] - [Revenue PY]
 
 Revenue MTD =
 TOTALMTD ( [Total Revenue], DimDate[full_date] )
@@ -59,8 +98,9 @@ TOTALYTD ( [Total Revenue], DimDate[full_date] )
 Revenue Prior Month =
 CALCULATE ( [Total Revenue], DATEADD ( DimDate[full_date], -1, MONTH ) )
 
+// Format: Percentage, 1 decimal, with a +/- sign
 Sales Growth MoM % =
-DIVIDE ( [Total Revenue] - [Revenue Prior Month], [Revenue Prior Month], 0 )
+DIVIDE ( [Total Revenue] - [Revenue Prior Month], [Revenue Prior Month] )
 
 Rolling 3M Revenue =
 CALCULATE (
@@ -68,23 +108,36 @@ CALCULATE (
     DATESINPERIOD ( DimDate[full_date], MAX ( DimDate[full_date] ), -3, MONTH )
 )
 
+
 // ---------- CUSTOMER ANALYTICS ----------
 
+// Counts customers by SIGNUP date rather than order date, via the inactive
+// relationship. Acquisition and demand are different questions and the two
+// series deliberately do not align - signups begin before the sales window.
 New Customers =
 CALCULATE (
     DISTINCTCOUNT ( DimCustomer[customer_id] ),
     USERELATIONSHIP ( DimCustomer[signup_date], DimDate[full_date] )
 )
-// NOTE: create an inactive relationship DimCustomer[signup_date] -> DimDate[full_date]
-// in the model view, then this measure activates it for New Customers by period.
 
+Cumulative Customers =
+CALCULATE (
+    [New Customers],
+    FILTER ( ALL ( DimDate ), DimDate[full_date] <= MAX ( DimDate[full_date] ) )
+)
+
+// Format: Percentage, 1 decimal
 Customer Growth % =
-VAR CurrentCustomers = DISTINCTCOUNT ( FactSales[customer_id] )
+VAR CurrentCustomers = [Total Customers]
 VAR PriorCustomers =
-    CALCULATE ( DISTINCTCOUNT ( FactSales[customer_id] ), SAMEPERIODLASTYEAR ( DimDate[full_date] ) )
+    CALCULATE ( [Total Customers], SAMEPERIODLASTYEAR ( DimDate[full_date] ) )
 RETURN
-    DIVIDE ( CurrentCustomers - PriorCustomers, PriorCustomers, 0 )
+    DIVIDE ( CurrentCustomers - PriorCustomers, PriorCustomers )
 
+// Format: Percentage, 1 decimal.
+// On the shipped dataset every transacting customer has ordered more than
+// once, so this reads 100% and carries no signal. Orders Per Customer is the
+// informative depth measure here; see docs/KPI_DEFINITIONS.md.
 Repeat Customer Rate =
 VAR CustomersWithMultipleOrders =
     COUNTROWS (
@@ -96,30 +149,70 @@ VAR CustomersWithMultipleOrders =
 RETURN
     DIVIDE ( CustomersWithMultipleOrders, [Total Customers], 0 )
 
+
 // ---------- INVENTORY ANALYTICS ----------
 
 Total Stock On Hand =
 SUM ( DimInventory[stock_quantity] )
 
-Products Needing Reorder =
-CALCULATE ( DISTINCTCOUNT ( DimInventory[product_id] ), DimInventory[needs_reorder] = TRUE () )
+// Format: Currency, 0 decimals
+Stock Value =
+SUMX ( DimInventory, DimInventory[stock_quantity] * RELATED ( DimProduct[unit_cost] ) )
 
+Products Needing Reorder =
+CALCULATE (
+    DISTINCTCOUNT ( DimInventory[product_id] ),
+    FILTER ( DimInventory, DimInventory[stock_quantity] <= DimInventory[reorder_level] )
+)
+
+// Within 25% of the trigger but not yet through it - the same band the
+// Python and SQL layers use for the "AT RISK" flag.
+Products At Risk =
+CALCULATE (
+    DISTINCTCOUNT ( DimInventory[product_id] ),
+    FILTER (
+        DimInventory,
+        DimInventory[stock_quantity] > DimInventory[reorder_level]
+            && DimInventory[stock_quantity] <= DimInventory[reorder_level] * 1.25
+    )
+)
+
+// Format: Decimal, 2 places, suffix "x".
+// Units sold spans the whole reporting period while stock is a point-in-time
+// snapshot, so this ranks relative velocity - it is not an annualised turn.
 Inventory Turnover Ratio =
 DIVIDE ( [Total Units Sold], [Total Stock On Hand], 0 )
+
+Inventory Risk Status =
+VAR Stock = SUM ( DimInventory[stock_quantity] )
+VAR Trigger = SUM ( DimInventory[reorder_level] )
+RETURN
+    SWITCH (
+        TRUE (),
+        Stock <= Trigger, "Reorder Now",
+        Stock <= Trigger * 1.25, "At Risk",
+        "OK"
+    )
+
 
 // ---------- RANKING / TOP-N ----------
 
 Product Revenue Rank =
-RANKX ( ALL ( DimProduct[product_name] ), [Total Revenue], , DESC, DENSE )
+RANKX ( ALLSELECTED ( DimProduct[product_name] ), [Total Revenue], , DESC, DENSE )
 
 Customer Revenue Rank =
-RANKX ( ALL ( DimCustomer[customer_name] ), [Total Revenue], , DESC, DENSE )
+RANKX ( ALLSELECTED ( DimCustomer[customer_name] ), [Total Revenue], , DESC, DENSE )
 
+// Ranks over region_name, which is the region grain. DimRegion has one row
+// per country, so ranking over region_id would rank countries.
 Region Revenue Rank =
-RANKX ( ALL ( DimRegion[region_name] ), [Total Revenue], , DESC, DENSE )
+RANKX ( ALLSELECTED ( DimRegion[region_name] ), [Total Revenue], , DESC, DENSE )
 
-// ---------- CONDITIONAL FORMATTING / KPI STATUS ----------
 
+// ---------- KPI STATUS / CONDITIONAL FORMATTING ----------
+
+// The 35% / 20% bands are shared with report_theme.margin_status() in Python
+// and with the CASE expressions in sql/03_analysis_queries.sql.
 Margin Status =
 VAR M = [Profit Margin %]
 RETURN
@@ -130,14 +223,39 @@ RETURN
         "At Risk"
     )
 
-Revenue KPI Icon =
-VAR YoY = [Revenue YoY %]
+// Use as the "Field value" colour source in conditional formatting.
+Margin Status Colour =
+SWITCH (
+    [Margin Status],
+    "Healthy", "#1F7A54",
+    "Watch", "#B0791C",
+    "#A93226"
+)
+
+Growth Colour =
+IF ( [Revenue YoY %] >= 0, "#1F7A54", "#A93226" )
+
+
+// ---------- DYNAMIC TITLES ----------
+// Bind to a visual's Title > Conditional formatting > Field value so the
+// header states what is on screen rather than repeating a static label.
+
+Revenue Title =
+"Revenue  ·  " & FORMAT ( [Total Revenue], "$#,##0,,.0M" )
+    & "  ·  " & FORMAT ( [Revenue YoY %], "+0.0%;-0.0%;0.0%" ) & " YoY"
+
+Filter Context Title =
+VAR Years = CONCATENATEX ( VALUES ( DimDate[year] ), DimDate[year], ", " )
+VAR Regions = CONCATENATEX ( VALUES ( DimRegion[region_name] ), DimRegion[region_name], ", " )
 RETURN
-    SWITCH ( TRUE (), YoY > 0, "▲", YoY < 0, "▼", "▬" )
+    "Years: " & IF ( ISFILTERED ( DimDate[year] ), Years, "All" )
+        & "   ·   Regions: " & IF ( ISFILTERED ( DimRegion[region_name] ), Regions, "All" )
+
 
 // ---------- FORECAST DASHBOARD SUPPORT ----------
-// Pairs with Power BI's built-in Analytics > Forecast on a line chart,
-// or a linear-trend measure for a simple in-DAX projection:
+// These pair with Power BI's built-in Analytics > Forecast on the revenue
+// line chart. Keep the built-in forecast for the shaded confidence band and
+// use these for the explanatory trend and smoothing lines.
 
 Revenue 3M Moving Avg =
 AVERAGEX (
@@ -145,13 +263,47 @@ AVERAGEX (
     [Total Revenue]
 )
 
-Linear Trend Revenue =
-VAR MonthIndex = DATEDIFF ( MIN ( DimDate[full_date] ), MAX ( DimDate[full_date] ), MONTH )
-VAR Slope =
-    DIVIDE (
-        SUMX ( VALUES ( DimDate[month] ), ( DimDate[month] - AVERAGE ( DimDate[month] ) ) * [Total Revenue] ),
-        SUMX ( VALUES ( DimDate[month] ), ( DimDate[month] - AVERAGE ( DimDate[month] ) ) ^ 2 ),
-        0
+// Least-squares fit of monthly revenue against DimDate[Month Index], the
+// continuous month counter added in calculated_columns.dax.
+//
+// An earlier version regressed against DimDate[month] (1-12). That column
+// restarts every January, so the fitted slope described the shape of a
+// calendar year rather than the trend across the series and the projection
+// was meaningless. Any trend measure must run on a monotonic index.
+Revenue Trend Slope =
+VAR Monthly =
+    SUMMARIZE (
+        ALLSELECTED ( DimDate ),
+        DimDate[Month Index],
+        "@Revenue", [Total Revenue]
     )
+VAR Points = FILTER ( Monthly, NOT ISBLANK ( [@Revenue] ) )
+VAR N = COUNTROWS ( Points )
+VAR SumX = SUMX ( Points, DimDate[Month Index] )
+VAR SumY = SUMX ( Points, [@Revenue] )
+VAR SumXY = SUMX ( Points, DimDate[Month Index] * [@Revenue] )
+VAR SumX2 = SUMX ( Points, DimDate[Month Index] ^ 2 )
 RETURN
-    [Total Revenue] + Slope * MonthIndex
+    DIVIDE ( N * SumXY - SumX * SumY, N * SumX2 - SumX ^ 2 )
+
+Revenue Trend Intercept =
+VAR Monthly =
+    SUMMARIZE (
+        ALLSELECTED ( DimDate ),
+        DimDate[Month Index],
+        "@Revenue", [Total Revenue]
+    )
+VAR Points = FILTER ( Monthly, NOT ISBLANK ( [@Revenue] ) )
+VAR N = COUNTROWS ( Points )
+VAR SumX = SUMX ( Points, DimDate[Month Index] )
+VAR SumY = SUMX ( Points, [@Revenue] )
+RETURN
+    DIVIDE ( SumY - [Revenue Trend Slope] * SumX, N )
+
+// Plot alongside Total Revenue on the Forecast page. Blank outside the
+// month grain, because a straight-line fit over months means nothing when
+// the axis is days or years.
+Linear Trend Revenue =
+VAR X = SELECTEDVALUE ( DimDate[Month Index] )
+RETURN
+    IF ( NOT ISBLANK ( X ), [Revenue Trend Intercept] + [Revenue Trend Slope] * X )
