@@ -435,7 +435,8 @@ def _kpi_cards_html(f: dict) -> str:
         )
         cards.append(
             f'<div class="card"><div class="card-label">{html.escape(metric)}</div>'
-            f'<div class="card-value" style="color:{colour}">{html.escape(display)}</div>'
+            f'<div class="card-value" style="color:var({colour.css_var})">'
+            f'{html.escape(display)}</div>'
             f'<div class="card-note">{html.escape(definition)}</div></div>'
         )
     return '<div class="cards">' + "".join(cards) + "</div>"
@@ -507,20 +508,33 @@ def render_html(f: dict) -> str:
 
     style = f"""
 :root {{
-  --ink: {t.INK}; --ink-soft: {t.INK_SOFT}; --text: {t.TEXT}; --muted: {t.MUTED};
-  --border: {t.BORDER}; --surface: {t.SURFACE}; --canvas: {t.CANVAS};
-  --surface-alt: {t.SURFACE_ALT}; --positive: {t.POSITIVE}; --caution: {t.CAUTION};
-  --negative: {t.NEGATIVE}; --teal: {t.TEAL};
+{t.css_variables()}
+}}
+/* Follows the reader's browser or OS preference, which is not necessarily the
+   same as a site's own light/dark toggle. */
+@media (prefers-color-scheme: dark) {{
+  :root {{
+{t.css_variables(dark=True)}
+  }}
+  .sheet {{ border: 1px solid var(--border); }}
+}}
+/* Print stays light whatever the screen is set to: a dark background is
+   usually dropped by the print pipeline, which would leave near-white text on
+   white paper. */
+@media print {{
+  :root {{
+{t.css_variables()}
+  }}
 }}
 * {{ box-sizing: border-box; }}
 body {{ margin:0; background:var(--canvas); color:var(--text);
        font-family:{t.FONT_STACK}; font-size:14px; line-height:1.55; }}
 .sheet {{ max-width:1080px; margin:0 auto; background:var(--surface);
           box-shadow:0 1px 3px rgba(16,36,62,.08); }}
-header.masthead {{ background:var(--ink); color:#fff; padding:28px 40px 24px; }}
+header.masthead {{ background:var(--nav); color:var(--on-nav); padding:28px 40px 24px; }}
 .masthead h1 {{ margin:0; font-size:24px; font-weight:600; letter-spacing:-.01em; }}
-.masthead .sub {{ margin-top:4px; font-size:14px; color:#B9C6D6; }}
-.masthead .meta {{ margin-top:14px; font-size:12px; color:#8FA3BA;
+.masthead .sub {{ margin-top:4px; font-size:14px; color:var(--nav-muted); }}
+.masthead .meta {{ margin-top:14px; font-size:12px; color:var(--nav-muted); opacity:.85;
                    border-top:1px solid rgba(255,255,255,.14); padding-top:12px; }}
 main {{ padding:0 40px 40px; }}
 section {{ padding-top:28px; }}
@@ -546,7 +560,7 @@ th {{ font-size:10.5px; font-weight:600; letter-spacing:.06em; text-transform:up
       color:var(--muted); border-bottom:1px solid var(--ink); white-space:nowrap; }}
 td.num, th.num {{ text-align:right; font-variant-numeric:tabular-nums; }}
 tbody tr:nth-child(even) {{ background:var(--surface-alt); }}
-.finding {{ border-left:3px solid var(--teal); padding:2px 0 2px 14px; margin:0 0 12px; }}
+.finding {{ border-left:3px solid var(--series-1); padding:2px 0 2px 14px; margin:0 0 12px; }}
 .finding strong {{ color:var(--ink-soft); }}
 .callout {{ background:var(--surface-alt); border:1px solid var(--border);
             border-left:3px solid var(--caution); padding:12px 16px; font-size:13px; }}
@@ -557,7 +571,7 @@ ol.recs li {{ margin-bottom:10px; }}
 footer {{ padding:20px 40px 32px; font-size:11.5px; color:var(--muted);
           border-top:1px solid var(--border); }}
 @media print {{
-  body {{ background:#fff; }}
+  body {{ background:var(--canvas); }}
   .sheet {{ box-shadow:none; max-width:none; }}
   section {{ break-inside:avoid; }}
 }}

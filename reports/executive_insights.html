@@ -6,20 +6,96 @@
 <title>Executive Business Review</title>
 <style>
 :root {
-  --ink: #10243E; --ink-soft: #1B3A5C; --text: #2E3A4B; --muted: #6B7A8D;
-  --border: #E3E8EF; --surface: #FFFFFF; --canvas: #F5F7FA;
-  --surface-alt: #EEF2F7; --positive: #1F7A54; --caution: #B0791C;
-  --negative: #A93226; --teal: #0F7C86;
+  --canvas: #F5F7FA;
+  --surface: #FFFFFF;
+  --surface-alt: #EEF2F7;
+  --border: #E3E8EF;
+  --ink: #10243E;
+  --ink-soft: #1B3A5C;
+  --text: #2E3A4B;
+  --muted: #6B7A8D;
+  --nav: #10243E;
+  --on-nav: #FFFFFF;
+  --nav-muted: #9FB3C8;
+  --positive: #1F7A54;
+  --caution: #B0791C;
+  --negative: #A93226;
+  --series-0: #10243E;
+  --series-1: #0F7C86;
+  --series-2: #3E7CB1;
+  --series-3: #6FA8A5;
+  --series-4: #C08A2E;
+  --series-5: #7A6FA8;
+  --series-6: #A85751;
+  --series-7: #7A8794;
+}
+/* Follows the reader's browser or OS preference, which is not necessarily the
+   same as a site's own light/dark toggle. */
+@media (prefers-color-scheme: dark) {
+  :root {
+  --canvas: #0D1117;
+  --surface: #161B22;
+  --surface-alt: #1C2430;
+  --border: #30363D;
+  --ink: #E6EDF3;
+  --ink-soft: #C6D3E1;
+  --text: #BAC5D2;
+  --muted: #8B98A8;
+  --nav: #152233;
+  --on-nav: #E6EDF3;
+  --nav-muted: #8095AC;
+  --positive: #46B37F;
+  --caution: #D3A03A;
+  --negative: #E06C60;
+  --series-0: #7FB0E0;
+  --series-1: #3FB8C4;
+  --series-2: #6FA8DC;
+  --series-3: #86C3BF;
+  --series-4: #D9A94A;
+  --series-5: #A99BD6;
+  --series-6: #D08983;
+  --series-7: #9AA7B4;
+  }
+  .sheet { border: 1px solid var(--border); }
+}
+/* Print stays light whatever the screen is set to: a dark background is
+   usually dropped by the print pipeline, which would leave near-white text on
+   white paper. */
+@media print {
+  :root {
+  --canvas: #F5F7FA;
+  --surface: #FFFFFF;
+  --surface-alt: #EEF2F7;
+  --border: #E3E8EF;
+  --ink: #10243E;
+  --ink-soft: #1B3A5C;
+  --text: #2E3A4B;
+  --muted: #6B7A8D;
+  --nav: #10243E;
+  --on-nav: #FFFFFF;
+  --nav-muted: #9FB3C8;
+  --positive: #1F7A54;
+  --caution: #B0791C;
+  --negative: #A93226;
+  --series-0: #10243E;
+  --series-1: #0F7C86;
+  --series-2: #3E7CB1;
+  --series-3: #6FA8A5;
+  --series-4: #C08A2E;
+  --series-5: #7A6FA8;
+  --series-6: #A85751;
+  --series-7: #7A8794;
+  }
 }
 * { box-sizing: border-box; }
 body { margin:0; background:var(--canvas); color:var(--text);
        font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; font-size:14px; line-height:1.55; }
 .sheet { max-width:1080px; margin:0 auto; background:var(--surface);
           box-shadow:0 1px 3px rgba(16,36,62,.08); }
-header.masthead { background:var(--ink); color:#fff; padding:28px 40px 24px; }
+header.masthead { background:var(--nav); color:var(--on-nav); padding:28px 40px 24px; }
 .masthead h1 { margin:0; font-size:24px; font-weight:600; letter-spacing:-.01em; }
-.masthead .sub { margin-top:4px; font-size:14px; color:#B9C6D6; }
-.masthead .meta { margin-top:14px; font-size:12px; color:#8FA3BA;
+.masthead .sub { margin-top:4px; font-size:14px; color:var(--nav-muted); }
+.masthead .meta { margin-top:14px; font-size:12px; color:var(--nav-muted); opacity:.85;
                    border-top:1px solid rgba(255,255,255,.14); padding-top:12px; }
 main { padding:0 40px 40px; }
 section { padding-top:28px; }
@@ -45,7 +121,7 @@ th { font-size:10.5px; font-weight:600; letter-spacing:.06em; text-transform:upp
       color:var(--muted); border-bottom:1px solid var(--ink); white-space:nowrap; }
 td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
 tbody tr:nth-child(even) { background:var(--surface-alt); }
-.finding { border-left:3px solid var(--teal); padding:2px 0 2px 14px; margin:0 0 12px; }
+.finding { border-left:3px solid var(--series-1); padding:2px 0 2px 14px; margin:0 0 12px; }
 .finding strong { color:var(--ink-soft); }
 .callout { background:var(--surface-alt); border:1px solid var(--border);
             border-left:3px solid var(--caution); padding:12px 16px; font-size:13px; }
@@ -56,7 +132,7 @@ ol.recs li { margin-bottom:10px; }
 footer { padding:20px 40px 32px; font-size:11.5px; color:var(--muted);
           border-top:1px solid var(--border); }
 @media print {
-  body { background:#fff; }
+  body { background:var(--canvas); }
   .sheet { box-shadow:none; max-width:none; }
   section { break-inside:avoid; }
 }
@@ -80,7 +156,7 @@ footer { padding:20px 40px 32px; font-size:11.5px; color:var(--muted);
 
 <section>
   <h2>Performance at a glance</h2>
-  <div class="cards"><div class="card"><div class="card-label">Total Revenue</div><div class="card-value" style="color:#10243E">$103.1M</div><div class="card-note">Sum of net revenue across all order lines</div></div><div class="card"><div class="card-label">Total Profit</div><div class="card-value" style="color:#10243E">$50.7M</div><div class="card-note">Net revenue less total cost</div></div><div class="card"><div class="card-label">Profit Margin %</div><div class="card-value" style="color:#10243E">49.2%</div><div class="card-note">Total profit / total revenue</div></div><div class="card"><div class="card-label">Revenue Growth YoY %</div><div class="card-value" style="color:#1F7A54">+7.0%</div><div class="card-note">Revenue change, 2023 to 2024</div></div><div class="card"><div class="card-label">Total Orders</div><div class="card-value" style="color:#10243E">19,665</div><div class="card-note">Distinct order identifiers</div></div><div class="card"><div class="card-label">Average Order Value</div><div class="card-value" style="color:#10243E">$5,244</div><div class="card-note">Total revenue / total orders</div></div><div class="card"><div class="card-label">Total Customers</div><div class="card-value" style="color:#10243E">500</div><div class="card-note">Distinct customers with at least one order</div></div><div class="card"><div class="card-label">Repeat Customer Rate %</div><div class="card-value" style="color:#10243E">100.0%</div><div class="card-note">Customers with more than one order / all customers</div></div></div>
+  <div class="cards"><div class="card"><div class="card-label">Total Revenue</div><div class="card-value" style="color:var(--ink)">$103.1M</div><div class="card-note">Sum of net revenue across all order lines</div></div><div class="card"><div class="card-label">Total Profit</div><div class="card-value" style="color:var(--ink)">$50.7M</div><div class="card-note">Net revenue less total cost</div></div><div class="card"><div class="card-label">Profit Margin %</div><div class="card-value" style="color:var(--ink)">49.2%</div><div class="card-note">Total profit / total revenue</div></div><div class="card"><div class="card-label">Revenue Growth YoY %</div><div class="card-value" style="color:var(--positive)">+7.0%</div><div class="card-note">Revenue change, 2023 to 2024</div></div><div class="card"><div class="card-label">Total Orders</div><div class="card-value" style="color:var(--ink)">19,665</div><div class="card-note">Distinct order identifiers</div></div><div class="card"><div class="card-label">Average Order Value</div><div class="card-value" style="color:var(--ink)">$5,244</div><div class="card-note">Total revenue / total orders</div></div><div class="card"><div class="card-label">Total Customers</div><div class="card-value" style="color:var(--ink)">500</div><div class="card-note">Distinct customers with at least one order</div></div><div class="card"><div class="card-label">Repeat Customer Rate %</div><div class="card-value" style="color:var(--ink)">100.0%</div><div class="card-note">Customers with more than one order / all customers</div></div></div>
 </section>
 
 <section>

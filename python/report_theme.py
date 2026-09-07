@@ -37,6 +37,12 @@ class Tone(str):
         obj.token = token
         return obj
 
+    @property
+    def css_var(self) -> str:
+        """The CSS custom property name, e.g. inkSoft -> --ink-soft."""
+        name = "".join(f"-{c.lower()}" if c.isupper() else c for c in self.token)
+        return "--" + name.replace("series", "series-")
+
 
 TONES: list[Tone] = []
 
@@ -100,6 +106,17 @@ FONT_STACK = ("'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 
 # a product flagged "At Risk" in the report is flagged "At Risk" in Power BI.
 MARGIN_HEALTHY = 35.0
 MARGIN_WATCH = 20.0
+
+
+def css_variables(dark: bool = False, indent: str = "  ") -> str:
+    """Every tone as a CSS custom property, for the HTML report.
+
+    Both the light and the dark block are generated from the same registry, so
+    a tone can never be defined in one scheme and missing from the other.
+    """
+    return "\n".join(
+        f"{indent}{tone.css_var}: {tone.dark if dark else str(tone)};" for tone in TONES
+    )
 
 
 def dark_mode_css(indent: str = "  ") -> str:

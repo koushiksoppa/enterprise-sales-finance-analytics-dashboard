@@ -157,7 +157,9 @@ figure is read from a KPI table; nothing is hand-written.
 
 The report covers regional and category performance, profitability and margin
 outliers, customer behaviour, inventory risk, a six-month outlook with its
-method stated, prioritised recommendations, and a data-quality section.
+method stated, prioritised recommendations, and a data-quality section. Like
+the previews it follows the reader's light or dark preference, and reverts to
+the light palette when printed.
 
 Two design decisions in that generator are worth calling out, because they are
 the difference between a report and a plausible-looking report:
