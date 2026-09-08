@@ -239,15 +239,33 @@ normal behaviour without changing any downstream logic.
 - Publish to the Power BI Service with a scheduled refresh
 - Add a paginated-report version for print-friendly exports
 
+## What this project demonstrates
+
+| Capability | Where to look |
+|---|---|
+| **Data modelling** | Star schema, 5 dimensions and a 19,665-row fact table. `DimRegion` is at country grain, and the region rollup is handled explicitly rather than by accident — `docs/DATASET.md` |
+| **ETL and data quality** | Deduplication, referential-integrity repair, type coercion and feature engineering over an intentionally messy source — `python/clean_data.py` |
+| **KPI governance** | One written definition per KPI, implemented three times — Python, T-SQL and DAX — and reconciled to the same totals: `docs/KPI_DEFINITIONS.md` |
+| **SQL / T-SQL** | Joins, CTEs, window functions (`LAG`, `RANK`, running totals) and six reporting views — `sql/03_analysis_queries.sql`, `sql/04_views.sql` |
+| **DAX** | 44 measures and 11 calculated columns: time intelligence, ranking, status banding and a least-squares trend — `powerbi/DAX/` |
+| **Forecasting** | Seasonal linear-trend projection with a residual-based range, compared year-on-year so seasonality is not misread as decline — `python/build_kpis.py` |
+| **Automated insights** | A written executive briefing generated from the KPI tables in Markdown and print-ready HTML — `python/generate_insights.py` |
+| **Analytical judgement** | Data-quality buckets excluded from rankings; saturated metrics flagged rather than presented as findings — `reports/executive_insights.md` |
+| **BI delivery and design** | Six-page report on a documented design system: theme, per-visual layout, synced slicers, bookmarks, drill-through, tooltips — `powerbi/POWERBI_BUILD_GUIDE.md` |
+
 ## Resume description
 
-> Designed and built an end-to-end Business Intelligence solution
-> (Python, SQL Server, Power BI) featuring a star-schema data warehouse,
-> an ETL pipeline that cleaned and validated ~20K transactional records,
-> and a six-page interactive executive dashboard with DAX-driven KPIs,
-> drill-through analysis, and automated insight generation — reducing
-> manual reporting effort and surfacing regional and product-level
-> profitability trends for leadership decision-making.
+> Built an end-to-end Business Intelligence solution (Python, SQL Server,
+> Power BI): a star-schema data warehouse, an ETL pipeline that cleaned and
+> validated ~20K transactional records, and a governed KPI layer implemented
+> identically in Python, T-SQL and DAX from a single written definition.
+> Delivered a six-page executive dashboard — 44 DAX measures, drill-through,
+> synced filtering and a six-month seasonal revenue forecast — and automated
+> the reporting cycle with an executive insights briefing generated directly
+> from the KPI tables. Diagnosed and fixed a dimension-grain defect that had
+> split one region into three and understated the leading region's revenue by
+> 2.5x, and built reconciliation checks so every KPI table ties to the same
+> totals.
 
 ## License
 
