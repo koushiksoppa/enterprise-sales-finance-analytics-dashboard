@@ -127,13 +127,19 @@ revenue-weighted.
 
 ## Installation
 
-Full walkthrough in `docs/INSTALLATION.md`. Quick start:
+Full walkthrough in `docs/INSTALLATION.md`.
+
+### 1. Environment
 
 ```powershell
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
+```
 
+### 2. Run the pipeline
+
+```powershell
 python python\generate_sample_data.py
 python python\clean_data.py
 python python\prepare_sql_csv.py
@@ -142,11 +148,45 @@ python python\generate_insights.py
 python python\build_dashboard_previews.py
 ```
 
-That populates `data/raw/`, `data/processed/`, `reports/` and `screenshots/`.
-Then follow `powerbi/POWERBI_BUILD_GUIDE.md` to assemble the `.pbix` — every
-query, relationship, measure, colour and visual position is specified.
-Optionally load the SQL Server warehouse with `sql/01_schema.sql` and
-`sql/02_load_data.sql`.
+Run them in that order — each stage reads the previous stage's output. This
+populates `data/raw/`, `data/processed/`, `reports/` and `screenshots/`. Open
+`reports/executive_insights.html` to check the run.
+
+### 3. Build the `.pbix`
+
+A `.pbix` is a proprietary binary that only Power BI Desktop can write, so this
+stage is manual — roughly 45–60 minutes of wiring, with no design decisions
+left to make. `powerbi/POWERBI_BUILD_GUIDE.md` gives the full detail; the
+sequence is:
+
+1. **Theme** — View → Themes → Browse for themes → `powerbi/theme.json`.
+2. **Parameter** — Home → Transform data → Manage Parameters → New: `FolderPath`,
+   Text, set to your absolute path to `data\processed\` (trailing backslash
+   required).
+3. **Queries** — one Blank Query per table (`DimDate`, `DimCustomer`,
+   `DimProduct`, `DimRegion`, `DimInventory`, `FactSales`); paste the matching
+   block from `powerbi/PowerQuery/power_query_m.pq` into the Advanced Editor,
+   rename to the table name, then Close & Apply.
+4. **Model** — create the six relationships in the guide's table, marking
+   `DimCustomer[signup_date] → DimDate[full_date]` **inactive**, then Mark
+   `DimDate` as a Date Table on `full_date`.
+5. **DAX** — paste the measures from `powerbi/DAX/measures.dax` and the columns
+   from `powerbi/DAX/calculated_columns.dax`. Add `DimDate[Month Index]` before
+   the trend measures, which depend on it.
+6. **Pages** — create the six pages and place each visual at the coordinates in
+   the guide. They are the same coordinates the previews in `screenshots/` were
+   rendered at, so you can compare a finished page against its preview.
+7. **Interactivity** — sync the four slicers across pages, add the bookmark
+   presets, the `Product Detail` drill-through page, and the tooltip page.
+8. **Save** as `powerbi/Enterprise_Sales_Finance_Dashboard.pbix`. Run
+   `git lfs install` first — `.gitattributes` already tracks `*.pbix`.
+
+### 4. SQL warehouse (optional)
+
+Run `sql/01_schema.sql`, set `@DataPath` in `sql/02_load_data.sql` to your
+`data\processed\` path and run it, then `sql/04_views.sql` and
+`sql/03_analysis_queries.sql`. The query results should match the
+corresponding files in `reports/`.
 
 ## Executive insights
 
