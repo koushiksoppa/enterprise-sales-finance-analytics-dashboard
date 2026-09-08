@@ -259,10 +259,13 @@ normal behaviour without changing any downstream logic.
 > Power BI): a star-schema data warehouse, an ETL pipeline that cleaned and
 > validated ~20K transactional records, and a governed KPI layer implemented
 > identically in Python, T-SQL and DAX from a single written definition.
-> Delivered a six-page executive dashboard — 44 DAX measures, drill-through,
-> synced filtering and a six-month seasonal revenue forecast — and automated
-> the reporting cycle with an executive insights briefing generated directly
-> from the KPI tables. Diagnosed and fixed a dimension-grain defect that had
+> Authored the complete Power BI implementation for a six-page executive
+> dashboard — Power Query M ingestion, the data model, 44 DAX measures, a
+> report theme and per-visual layout — covering drill-through, synced
+> filtering and a six-month seasonal revenue forecast, with every page
+> rendered from live KPI output so the design is verifiable against real
+> numbers. Automated the reporting cycle with an executive insights briefing
+> generated directly from the KPI tables. Diagnosed and fixed a dimension-grain defect that had
 > split one region into three and understated the leading region's revenue by
 > 2.5x, and built reconciliation checks so every KPI table ties to the same
 > totals.
