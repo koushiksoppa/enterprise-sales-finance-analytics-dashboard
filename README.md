@@ -19,8 +19,8 @@ executive insights report layered on top.
 | Insights | Python | Executive insights report in Markdown and print-ready HTML |
 | Previews | Python | Data-driven SVG renders of all six report pages |
 
-`docs/ARCHITECTURE.md` has the full data-flow diagram.
-`docs/KPI_DEFINITIONS.md` is the contract that keeps the Python, SQL and DAX
+[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) has the full data-flow diagram.
+[`docs/KPI_DEFINITIONS.md`](docs/KPI_DEFINITIONS.md) is the contract that keeps the Python, SQL and DAX
 implementations of each KPI in agreement.
 
 ## Dashboard pages
@@ -74,7 +74,7 @@ The previews are rendered from the KPI tables by
 `python/build_dashboard_previews.py`, on the same 1280×720 canvas Power BI uses,
 so the numbers on them are the pipeline's actual output and the panel
 coordinates double as the layout specification in
-`powerbi/POWERBI_BUILD_GUIDE.md`.
+[`powerbi/POWERBI_BUILD_GUIDE.md`](powerbi/POWERBI_BUILD_GUIDE.md).
 
 Each SVG carries both colour schemes: the light palette sits on every element
 as a presentation attribute, and an embedded stylesheet swaps in the dark
@@ -107,7 +107,7 @@ enterprise-sales-finance-analytics-dashboard/
 19,665 cleaned order-line transactions (January 2022 – December 2024) across
 500 customers, 22 products in 5 categories, and 10 countries in 4 regions,
 generated with a fixed random seed for reproducibility. Full details in
-`docs/DATASET.md`.
+[`docs/DATASET.md`](docs/DATASET.md).
 
 Headline figures from the shipped run: **$103.1M revenue, $50.7M profit, 49.2%
 margin, $5,244 average order value, +7.0% revenue growth 2023 → 2024.**
@@ -121,13 +121,13 @@ Products · Top Customers · Regional Performance.
 Each is implemented three times — as a DAX measure
 (`powerbi/DAX/measures.dax`), as T-SQL (`sql/03_analysis_queries.sql`,
 `sql/04_views.sql`), and in Python (`python/build_kpis.py`) — from a single
-written definition in `docs/KPI_DEFINITIONS.md`, including the margin health
+written definition in [`docs/KPI_DEFINITIONS.md`](docs/KPI_DEFINITIONS.md), including the margin health
 bands, the reorder risk bands, and the rule that all margins are
 revenue-weighted.
 
 ## Installation
 
-Full walkthrough in `docs/INSTALLATION.md`.
+Full walkthrough in [`docs/INSTALLATION.md`](docs/INSTALLATION.md).
 
 ### 1. Environment
 
@@ -156,7 +156,7 @@ populates `data/raw/`, `data/processed/`, `reports/` and `screenshots/`. Open
 
 A `.pbix` is a proprietary binary that only Power BI Desktop can write, so this
 stage is manual — roughly 45–60 minutes of wiring, with no design decisions
-left to make. `powerbi/POWERBI_BUILD_GUIDE.md` gives the full detail; the
+left to make. [`powerbi/POWERBI_BUILD_GUIDE.md`](powerbi/POWERBI_BUILD_GUIDE.md) gives the full detail; the
 sequence is:
 
 1. **Theme** — View → Themes → Browse for themes → `powerbi/theme.json`.
@@ -226,7 +226,7 @@ the reporting layer states this rather than working around it:
   revenue, so there is no Pareto tail to analyse.
 
 Both are properties of the generator, not analytical errors, and both are
-documented in `docs/KPI_DEFINITIONS.md`. Swapping in a real extract restores
+documented in [`docs/KPI_DEFINITIONS.md`](docs/KPI_DEFINITIONS.md). Swapping in a real extract restores
 normal behaviour without changing any downstream logic.
 
 ## Future improvements
@@ -243,15 +243,15 @@ normal behaviour without changing any downstream logic.
 
 | Capability | Where to look |
 |---|---|
-| **Data modelling** | Star schema, 5 dimensions and a 19,665-row fact table. `DimRegion` is at country grain, and the region rollup is handled explicitly rather than by accident — `docs/DATASET.md` |
-| **ETL and data quality** | Deduplication, referential-integrity repair, type coercion and feature engineering over an intentionally messy source — `python/clean_data.py` |
-| **KPI governance** | One written definition per KPI, implemented three times — Python, T-SQL and DAX — and reconciled to the same totals: `docs/KPI_DEFINITIONS.md` |
-| **SQL / T-SQL** | Joins, CTEs, window functions (`LAG`, `RANK`, running totals) and six reporting views — `sql/03_analysis_queries.sql`, `sql/04_views.sql` |
-| **DAX** | 44 measures and 11 calculated columns: time intelligence, ranking, status banding and a least-squares trend — `powerbi/DAX/` |
-| **Forecasting** | Seasonal linear-trend projection with a residual-based range, compared year-on-year so seasonality is not misread as decline — `python/build_kpis.py` |
-| **Automated insights** | A written executive briefing generated from the KPI tables in Markdown and print-ready HTML — `python/generate_insights.py` |
-| **Analytical judgement** | Data-quality buckets excluded from rankings; saturated metrics flagged rather than presented as findings — `reports/executive_insights.md` |
-| **BI delivery and design** | Six-page report on a documented design system: theme, per-visual layout, synced slicers, bookmarks, drill-through, tooltips — `powerbi/POWERBI_BUILD_GUIDE.md` |
+| **Data modelling** | Star schema, 5 dimensions and a 19,665-row fact table. `DimRegion` is at country grain, and the region rollup is handled explicitly rather than by accident — [`docs/DATASET.md`](docs/DATASET.md) |
+| **ETL and data quality** | Deduplication, referential-integrity repair, type coercion and feature engineering over an intentionally messy source — [`python/clean_data.py`](python/clean_data.py) |
+| **KPI governance** | One written definition per KPI, implemented three times — Python, T-SQL and DAX — and reconciled to the same totals: [`docs/KPI_DEFINITIONS.md`](docs/KPI_DEFINITIONS.md) |
+| **SQL / T-SQL** | Joins, CTEs, window functions (`LAG`, `RANK`, running totals) and six reporting views — [`sql/03_analysis_queries.sql`](sql/03_analysis_queries.sql), [`sql/04_views.sql`](sql/04_views.sql) |
+| **DAX** | 44 measures and 11 calculated columns: time intelligence, ranking, status banding and a least-squares trend — [`powerbi/DAX/`](powerbi/DAX/) |
+| **Forecasting** | Seasonal linear-trend projection with a residual-based range, compared year-on-year so seasonality is not misread as decline — [`python/build_kpis.py`](python/build_kpis.py) |
+| **Automated insights** | A written executive briefing generated from the KPI tables in Markdown and print-ready HTML — [`python/generate_insights.py`](python/generate_insights.py) |
+| **Analytical judgement** | Data-quality buckets excluded from rankings; saturated metrics flagged rather than presented as findings — [`reports/executive_insights.md`](reports/executive_insights.md) |
+| **BI delivery and design** | Six-page report on a documented design system: theme, per-visual layout, synced slicers, bookmarks, drill-through, tooltips — [`powerbi/POWERBI_BUILD_GUIDE.md`](powerbi/POWERBI_BUILD_GUIDE.md) |
 
 ## Resume description
 
