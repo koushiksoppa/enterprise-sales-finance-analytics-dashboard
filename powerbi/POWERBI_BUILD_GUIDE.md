@@ -28,6 +28,8 @@ python python\generate_sample_data.py
 python python\clean_data.py
 python python\prepare_sql_csv.py
 python python\build_kpis.py
+python python\auto_retail_analysis.py
+python python\dealership_kpi_simulation.py
 ```
 
 `prepare_sql_csv.py` is not optional here: it normalises `DimDate.csv`, and the
@@ -257,6 +259,37 @@ Three requirements on this page, in order of importance:
    its assumptions is a claim, not an analysis.
 
 Never label the projection "expected revenue" or a target.
+
+### 6.7 Auto Retail Market — "Are our franchise brands winning or losing share?" (REAL data)
+
+Load `data/external/fada_oem_retail_2026.csv` as **FactOemRetail** and `fada_ev_share_2026.csv` as
+**SegmentEV**; create **DimPortfolioBrand** and the measures from `DAX/auto_retail_measures.dax`.
+Keep this page's model separate from the synthetic star schema: there is no relationship between them.
+
+| Visual | Position | Fields |
+|---|---|---|
+| Slicer | 16, 90, 300, 40 | `FactOemRetail[segment]` (PV / 2W), single select, default PV |
+| KPI card × 4 | y 140, h 78, w 300 | Segment Growth YoY % · portfolio Retail Growth YoY % (card filtered to portfolio brands) · Share Change bps (portfolio) · Units vs Held Share (portfolio) |
+| Clustered bar | 16, 230, 620, 340 | Axis brand (portfolio only); values Retail Growth YoY % and Segment Growth YoY % |
+| Bar chart | 648, 230, 616, 340 | Axis `FactOemRetail[oem]`, value Share Change bps, sorted descending, bar colour from `Bar Colour` (Format → Bars → fx → Field value) |
+| Line chart | 16, 582, 1248, 122 | Axis month, values EV Share % and EV Share LY % (dashed) |
+
+Match `screenshots/auto_growth_vs_market.png` and `auto_share_change.png`. Add a textbox: "Source: FADA monthly
+vehicle retail data. All-India; no state split."
+
+### 6.8 Dealership KPIs — "Where is each showroom losing customers or money?" (SIMULATED data)
+
+Load `reports/auto_retail/sim_funnel_monthly.csv` and `sim_inventory_ageing.csv`. Put **"SIMULATED DATA —
+illustrates the KPIs, not real dealer performance"** in the page title bar.
+
+| Visual | Position | Fields |
+|---|---|---|
+| Funnel | 16, 90, 400, 360 | enquiries → test_drives → bookings → deliveries, slicer by showroom |
+| Bar chart | 428, 90, 836, 360 | Enquiry-to-delivery % by showroom (`DIVIDE(SUM(deliveries), SUM(enquiries))`) |
+| Stacked bar | 16, 462, 820, 242 | Stock units by showroom, legend age_bucket (0–30 light → 90+ dark, one sequential hue) |
+| Table | 848, 462, 416, 242 | Showroom, units over 60 days, holding cost to date |
+
+KPI definitions, owners and review cadence are in `reports/auto_retail/DEALERSHIP_KPI_FRAMEWORK.md`.
 
 ---
 

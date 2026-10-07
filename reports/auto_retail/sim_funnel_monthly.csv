@@ -1,0 +1,41 @@
+showroom,month,enquiries,test_drives,bookings,deliveries
+Toyota showroom,2026-02,925,427,121,107
+Toyota showroom,2026-03,966,444,121,106
+Toyota showroom,2026-04,916,435,158,139
+Toyota showroom,2026-05,867,387,147,134
+Toyota showroom,2026-06,980,432,133,120
+Toyota showroom,2026-07,1039,456,152,139
+Toyota showroom,2026-08,863,396,131,122
+Toyota showroom,2026-09,913,415,140,128
+Honda Cars showroom,2026-02,402,180,49,44
+Honda Cars showroom,2026-03,497,205,61,57
+Honda Cars showroom,2026-04,485,199,52,46
+Honda Cars showroom,2026-05,388,147,42,33
+Honda Cars showroom,2026-06,458,181,41,39
+Honda Cars showroom,2026-07,547,230,58,48
+Honda Cars showroom,2026-08,454,192,52,50
+Honda Cars showroom,2026-09,464,198,51,41
+MG Motor showroom,2026-02,485,213,67,56
+MG Motor showroom,2026-03,618,243,55,49
+MG Motor showroom,2026-04,627,267,64,59
+MG Motor showroom,2026-05,631,248,57,51
+MG Motor showroom,2026-06,768,294,74,66
+MG Motor showroom,2026-07,795,308,61,54
+MG Motor showroom,2026-08,631,264,71,57
+MG Motor showroom,2026-09,662,272,65,53
+Mercedes-Benz showroom,2026-02,100,61,11,11
+Mercedes-Benz showroom,2026-03,102,58,19,17
+Mercedes-Benz showroom,2026-04,97,52,20,19
+Mercedes-Benz showroom,2026-05,100,57,11,10
+Mercedes-Benz showroom,2026-06,133,74,30,27
+Mercedes-Benz showroom,2026-07,144,77,15,15
+Mercedes-Benz showroom,2026-08,120,66,21,18
+Mercedes-Benz showroom,2026-09,145,76,24,21
+Ather showroom,2026-02,1295,633,245,234
+Ather showroom,2026-03,2270,1129,406,383
+Ather showroom,2026-04,1681,847,319,304
+Ather showroom,2026-05,1794,907,341,312
+Ather showroom,2026-06,1863,936,369,351
+Ather showroom,2026-07,1901,919,324,307
+Ather showroom,2026-08,1865,981,366,337
+Ather showroom,2026-09,1873,930,362,335

@@ -1,275 +1,127 @@
-# Enterprise Sales & Finance Analytics Dashboard
+# Auto Retail Market & Dealership Performance Analytics
 
-An end-to-end Business Intelligence project. A synthetic-but-realistic retail
-dataset flows through a Python ETL pipeline into a SQL Server star schema and a
-six-page Power BI executive dashboard, with an automatically generated
-executive insights report layered on top.
+A business-intelligence project built from the seat of a **multi-brand automobile dealer group** holding Toyota,
+Honda Cars, JSW MG Motor, Mercedes-Benz and Ather franchises. It answers three questions a dealer's leadership
+team asks every month:
 
-![Executive Dashboard](screenshots/executive_dashboard.svg)
+1. **Are our franchise brands winning or losing ground in the market?** Answered with *real* national retail data.
+2. **Where is each showroom losing customers or money?** A sales-funnel and inventory-ageing KPI framework.
+3. **How is the business performing on revenue, margin, customers and stock?** A six-page executive dashboard.
 
-## Overview
+Stack: Python (pandas, matplotlib) · SQL Server (T-SQL, window functions) · Power BI (DAX, Power Query).
 
-| Layer | Tech | What it does |
-|---|---|---|
-| Data generation | Python (pandas, numpy) | Produces a realistic, intentionally messy sample dataset |
-| ETL | Python | Cleans, deduplicates, type-fixes, and engineers a star schema |
-| Data warehouse | SQL Server (T-SQL) | Star schema DDL, indexes, views, KPI queries with joins, CTEs and window functions |
-| KPI layer | Python | Twelve KPI tables that back the report and cross-check the DAX |
-| BI layer | Power BI Desktop | Six-page dashboard: DAX measures, Power Query, theme, bookmarks, drill-through, tooltips |
-| Insights | Python | Executive insights report in Markdown and print-ready HTML |
-| Previews | Python | Data-driven SVG renders of all six report pages |
+## Headline findings (real data)
 
-[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) has the full data-flow diagram.
-[`docs/KPI_DEFINITIONS.md`](docs/KPI_DEFINITIONS.md) is the contract that keeps the Python, SQL and DAX
-implementations of each KPI in agreement.
+Source: [FADA](https://fada.in) monthly vehicle retail registrations, February–September 2026 against the same
+months of 2025, all-India. Full memo: [`reports/auto_retail/AUTO_RETAIL_BRIEF.md`](reports/auto_retail/AUTO_RETAIL_BRIEF.md).
 
-## Dashboard pages
+- **The car market grew 22.1%, but the four portfolio car brands together grew only 7.4%.** Their combined share
+  fell from 11.02% to 9.70% (−133 bps), about 43,800 cars short of where they would have been at constant share.
+- **Toyota lost the most share among portfolio brands (−87 bps)** even while growing 7.9% in units. Share moved to
+  Tata Motors (+153 bps) and Maruti Suzuki (+128 bps).
+- **Ather grew 82.0% against a 21.5% two-wheeler market**, raising its share from 1.07% to 1.60%.
+- **EV share of car retail rose from 3.48% to 8.45%** between February and September 2026.
 
-Every page answers one question and is laid out on the same grid.
+![Portfolio brand growth vs market](screenshots/auto_growth_vs_market.png)
 
-| Page | Question it answers |
-|---|---|
-| Executive Dashboard | How is the business performing? |
-| Sales Analytics | Where are sales coming from and what drives them? |
-| Financial Analytics | Are we growing profitably? |
-| Customer Analytics | Who are our customers and how do they behave? |
-| Inventory Analytics | Where are we exposed to inventory risk? |
-| Forecast Dashboard | What is likely to happen next? |
+![Change in passenger-vehicle market share](screenshots/auto_share_change.png)
 
-All six share a navigation bar, a synced slicer strip (year, region, category,
-segment), bookmark presets, drill-through to a product detail page, and report
-page tooltips.
+![EV share of retail](screenshots/auto_ev_share.png)
 
-<details>
-<summary><b>Sales Analytics</b> — trend and 3-month average, AOV by category, top products, region and segment mix</summary>
+**Recommendations** (detailed in the brief): treat Ather as the growth engine for capital and outlet expansion;
+defend car share through showroom conversion rather than volume pushes; keep ageing stock of below-market brands
+under weekly review; and stock fast-moving variants for the festive quarter, given September's rebound.
 
-![Sales Analytics](screenshots/sales_analytics.svg)
-</details>
+## What is in the project
 
-<details>
-<summary><b>Financial Analytics</b> — profit trend, margin by category against the 35% healthy band, lowest-margin products with status</summary>
+| Layer | Question | Data | Main files |
+|---|---|---|---|
+| **Auto retail market** | Which brands gain or lose share; growth vs segment; EV shift | **Real** (FADA) | `python/auto_retail_analysis.py`, `sql/05_auto_retail_market.sql`, `powerbi/DAX/auto_retail_measures.dax` |
+| **Dealership KPI framework** | Funnel conversion by showroom; stock ageing and holding cost | **Simulated**, demand pattern follows real FADA trends | `python/dealership_kpi_simulation.py`, [`DEALERSHIP_KPI_FRAMEWORK.md`](reports/auto_retail/DEALERSHIP_KPI_FRAMEWORK.md) |
+| **Executive sales & finance BI** | Revenue, profit, margin, customers, inventory, forecast | **Synthetic** retail dataset | `python/` ETL scripts, `sql/01–04`, `powerbi/` |
 
-![Financial Analytics](screenshots/financial_analytics.svg)
-</details>
+### Data honesty
 
-<details>
-<summary><b>Customer Analytics</b> — base growth, revenue by segment, top customers, revenue per customer</summary>
+- **Real:** everything in `data/external/` and `reports/auto_retail/` except files prefixed `sim_`. Sources, extraction
+  method and validation checks are in [`data/external/SOURCES.md`](data/external/SOURCES.md). Every month's OEM rows
+  are checked to sum exactly to FADA's published total.
+- **Simulated:** files prefixed `sim_`. Real showroom data is private, so these illustrate how the KPIs work. Every
+  assumption is listed in the framework document.
+- **Synthetic:** `data/raw/` and `data/processed/`, generated with a fixed random seed to demonstrate the ETL,
+  star schema and dashboard build.
 
-![Customer Analytics](screenshots/customer_analytics.svg)
-</details>
+## Dealership KPI framework (simulated data)
 
-<details>
-<summary><b>Inventory Analytics</b> — stock against reorder level, turnover by product, replenishment watchlist</summary>
+Defines eight operating KPIs (enquiry → test drive → booking → delivery conversion, days in stock, aged-stock %,
+holding cost, first-service retention), each with a formula, owner, review cadence and action trigger. The
+simulation shows the mechanism behind aged stock: slow-selling variants making up a larger share of orders than of
+customer demand.
 
-![Inventory Analytics](screenshots/inventory_analytics.svg)
-</details>
+![Funnel conversion by showroom, simulated](screenshots/sim_funnel_conversion.png)
 
-<details>
-<summary><b>Forecast Dashboard</b> — actuals, trend, moving average and a six-month projection with its range</summary>
+## Executive sales & finance dashboard (synthetic data)
 
-![Forecast Dashboard](screenshots/forecast_dashboard.svg)
-</details>
+A Python ETL pipeline cleans ~19,600 messy order lines (500 customers, 22 products, 10 countries in 4 regions,
+2022–2024) into a SQL Server star schema feeding a six-page Power BI report: Executive, Sales, Financial,
+Customer, Inventory and Forecast. Eleven KPIs (revenue, profit, margin, YoY growth, AOV, repeat rate, inventory
+turnover and more) are defined once in [`docs/KPI_DEFINITIONS.md`](docs/KPI_DEFINITIONS.md) and implemented
+identically in DAX, T-SQL and Python. An executive review with recommendations is generated automatically:
+[`reports/executive_insights.md`](reports/executive_insights.md).
 
-The previews are rendered from the KPI tables by
-`python/build_dashboard_previews.py`, on the same 1280×720 canvas Power BI uses,
-so the numbers on them are the pipeline's actual output and the panel
-coordinates double as the layout specification in
-[`powerbi/POWERBI_BUILD_GUIDE.md`](powerbi/POWERBI_BUILD_GUIDE.md).
+The page images below are rendered from the KPI tables by `python/build_dashboard_previews.py`, on the same grid
+the Power BI build guide uses, so every number shown is computed rather than mocked up.
 
-Each SVG carries both colour schemes: the light palette sits on every element
-as a presentation attribute, and an embedded stylesheet swaps in the dark
-palette under `prefers-color-scheme: dark`. Text and chart series are separate
-tokens, so in dark mode headings invert to near-white while the navy series
-brightens to a legible blue rather than disappearing into the background.
-The scheme follows the reader's browser or OS preference, which is not
-necessarily the same as a site's own light/dark toggle.
+![Executive dashboard](screenshots/executive_dashboard.svg)
 
-## Folder structure
+Other pages: [Sales](screenshots/sales_analytics.svg) · [Financial](screenshots/financial_analytics.svg) ·
+[Customer](screenshots/customer_analytics.svg) · [Inventory](screenshots/inventory_analytics.svg) ·
+[Forecast](screenshots/forecast_dashboard.svg)
 
-```
-enterprise-sales-finance-analytics-dashboard/
-├── data/
-│   ├── raw/             # generated raw CSVs (messy, pre-cleaning)
-│   └── processed/       # cleaned star-schema CSVs
-├── sql/                 # DDL, bulk load, analytical queries, views
-├── python/              # ETL, KPI, insights, and preview scripts
-├── powerbi/             # DAX, Power Query M, theme, build guide
-├── docs/                # architecture, dataset, KPI definitions, installation
-├── screenshots/         # generated preview of each report page
-├── reports/             # generated KPI tables + executive insights (MD + HTML)
-├── README.md
-├── requirements.txt
-└── LICENSE
-```
+## Run it
 
-## Dataset
-
-19,665 cleaned order-line transactions (January 2022 – December 2024) across
-500 customers, 22 products in 5 categories, and 10 countries in 4 regions,
-generated with a fixed random seed for reproducibility. Full details in
-[`docs/DATASET.md`](docs/DATASET.md).
-
-Headline figures from the shipped run: **$103.1M revenue, $50.7M profit, 49.2%
-margin, $5,244 average order value, +7.0% revenue growth 2023 → 2024.**
-
-## KPIs
-
-Revenue · Profit · Profit Margin % · Sales Growth MoM/YoY · Average Order Value
-· Customer Growth % · Repeat Customer Rate · Inventory Turnover Ratio · Top
-Products · Top Customers · Regional Performance.
-
-Each is implemented three times — as a DAX measure
-(`powerbi/DAX/measures.dax`), as T-SQL (`sql/03_analysis_queries.sql`,
-`sql/04_views.sql`), and in Python (`python/build_kpis.py`) — from a single
-written definition in [`docs/KPI_DEFINITIONS.md`](docs/KPI_DEFINITIONS.md), including the margin health
-bands, the reorder risk bands, and the rule that all margins are
-revenue-weighted.
-
-## Installation
-
-Full walkthrough in [`docs/INSTALLATION.md`](docs/INSTALLATION.md).
-
-### 1. Environment
-
-```powershell
+```bash
 python -m venv .venv
-.venv\Scripts\activate
+.venv\Scripts\activate          # macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
+
+cd python
+python auto_retail_analysis.py        # real-data market analysis, charts and brief
+python dealership_kpi_simulation.py   # simulated showroom KPIs
+python generate_sample_data.py        # synthetic BI dataset ...
+python clean_data.py
+python prepare_sql_csv.py
+python build_kpis.py
+python generate_insights.py
+python build_dashboard_previews.py
 ```
 
-### 2. Run the pipeline
+SQL Server: run `sql/01_schema.sql` → `02_load_data.sql` → `03`/`04`, and `05_auto_retail_market.sql` for the
+market layer (update the data path at the top of each load script). Power BI: follow
+[`powerbi/POWERBI_BUILD_GUIDE.md`](powerbi/POWERBI_BUILD_GUIDE.md), which specifies every query, relationship,
+measure and visual position, including the Auto Retail Market and Dealership KPI pages. Full setup:
+[`docs/INSTALLATION.md`](docs/INSTALLATION.md).
 
-```powershell
-python python\generate_sample_data.py
-python python\clean_data.py
-python python\prepare_sql_csv.py
-python python\build_kpis.py
-python python\generate_insights.py
-python python\build_dashboard_previews.py
+## Repository layout
+
+```
+data/external/      real FADA data + SOURCES.md
+data/raw/, processed/  synthetic BI dataset (messy raw, cleaned star schema)
+python/             analysis, simulation, ETL, KPI and report scripts
+sql/                star schema, loads, KPI queries, views, auto-retail market layer
+powerbi/            DAX measures, Power Query M, theme, build guide
+reports/            KPI tables, executive review, auto_retail/ brief and KPI framework
+screenshots/        charts and dashboard page previews
+docs/               architecture, dataset, KPI definitions, installation
 ```
 
-Run them in that order — each stage reads the previous stage's output. This
-populates `data/raw/`, `data/processed/`, `reports/` and `screenshots/`. Open
-`reports/executive_insights.html` to check the run.
+## Limitations
 
-### 3. Build the `.pbix`
-
-A `.pbix` is a proprietary binary that only Power BI Desktop can write, so this
-stage is manual — roughly 45–60 minutes of wiring, with no design decisions
-left to make. [`powerbi/POWERBI_BUILD_GUIDE.md`](powerbi/POWERBI_BUILD_GUIDE.md) gives the full detail; the
-sequence is:
-
-1. **Theme** — View → Themes → Browse for themes → `powerbi/theme.json`.
-2. **Parameter** — Home → Transform data → Manage Parameters → New: `FolderPath`,
-   Text, set to your absolute path to `data\processed\` (trailing backslash
-   required).
-3. **Queries** — one Blank Query per table (`DimDate`, `DimCustomer`,
-   `DimProduct`, `DimRegion`, `DimInventory`, `FactSales`); paste the matching
-   block from `powerbi/PowerQuery/power_query_m.pq` into the Advanced Editor,
-   rename to the table name, then Close & Apply.
-4. **Model** — create the six relationships in the guide's table, marking
-   `DimCustomer[signup_date] → DimDate[full_date]` **inactive**, then Mark
-   `DimDate` as a Date Table on `full_date`.
-5. **DAX** — paste the measures from `powerbi/DAX/measures.dax` and the columns
-   from `powerbi/DAX/calculated_columns.dax`. Add `DimDate[Month Index]` before
-   the trend measures, which depend on it.
-6. **Pages** — create the six pages and place each visual at the coordinates in
-   the guide. They are the same coordinates the previews in `screenshots/` were
-   rendered at, so you can compare a finished page against its preview.
-7. **Interactivity** — sync the four slicers across pages, add the bookmark
-   presets, the `Product Detail` drill-through page, and the tooltip page.
-8. **Save** as `powerbi/Enterprise_Sales_Finance_Dashboard.pbix`. Run
-   `git lfs install` first — `.gitattributes` already tracks `*.pbix`.
-
-### 4. SQL warehouse (optional)
-
-Run `sql/01_schema.sql`, set `@DataPath` in `sql/02_load_data.sql` to your
-`data\processed\` path and run it, then `sql/04_views.sql` and
-`sql/03_analysis_queries.sql`. The query results should match the
-corresponding files in `reports/`.
-
-## Executive insights
-
-`python/generate_insights.py` reads the KPI tables and writes
-`reports/executive_insights.md` and `reports/executive_insights.html` (styled
-and print-ready) from one set of findings, so the two cannot disagree. Every
-figure is read from a KPI table; nothing is hand-written.
-
-The report covers regional and category performance, profitability and margin
-outliers, customer behaviour, inventory risk, a six-month outlook with its
-method stated, prioritised recommendations, and a data-quality section. Like
-the previews it follows the reader's light or dark preference, and reverts to
-the light palette when printed.
-
-Two design decisions in that generator are worth calling out, because they are
-the difference between a report and a plausible-looking report:
-
-- **Data-quality buckets are excluded from rankings.** Revenue whose source
-  region failed referential integrity sits in an `Unknown / Unassigned` bucket
-  and customers with a blank segment in an `Unclassified` bucket. Both are
-  reported in the totals and named in the data-quality section, but neither can
-  be returned as "the worst-performing region" or "the segment to invest in".
-- **Findings adapt to what the data shows.** Where a metric is saturated or a
-  spread is immaterial, the report says so and points at the measure that does
-  carry signal, instead of asserting a conclusion the numbers do not support.
-
-## Notes on the data
-
-Because the dataset is synthetic and orders are assigned to customers
-uniformly at random, two metrics behave unlike a real transactional extract and
-the reporting layer states this rather than working around it:
-
-- **Repeat Customer Rate reads 100%.** Every customer has ordered many times
-  (39.3 orders each on average), so the metric is saturated. Orders per customer
-  is the informative depth measure on this dataset.
-- **Revenue concentration is very low.** The top 10 customers hold 3.1% of
-  revenue, so there is no Pareto tail to analyse.
-
-Both are properties of the generator, not analytical errors, and both are
-documented in [`docs/KPI_DEFINITIONS.md`](docs/KPI_DEFINITIONS.md). Swapping in a real extract restores
-normal behaviour without changing any downstream logic.
-
-## Future improvements
-
-- Swap the synthetic dataset for a real transactional export
-- Give the generator realistic customer purchase concentration so the retention
-  and concentration metrics carry signal
-- Add Row-Level Security roles in Power BI for regional managers
-- Automate the ETL with a scheduled task or Azure Data Factory pipeline
-- Publish to the Power BI Service with a scheduled refresh
-- Add a paginated-report version for print-friendly exports
-
-## What this project demonstrates
-
-| Capability | Where to look |
-|---|---|
-| **Data modelling** | Star schema, 5 dimensions and a 19,665-row fact table. `DimRegion` is at country grain, and the region rollup is handled explicitly rather than by accident — [`docs/DATASET.md`](docs/DATASET.md) |
-| **ETL and data quality** | Deduplication, referential-integrity repair, type coercion and feature engineering over an intentionally messy source — [`python/clean_data.py`](python/clean_data.py) |
-| **KPI governance** | One written definition per KPI, implemented three times — Python, T-SQL and DAX — and reconciled to the same totals: [`docs/KPI_DEFINITIONS.md`](docs/KPI_DEFINITIONS.md) |
-| **SQL / T-SQL** | Joins, CTEs, window functions (`LAG`, `RANK`, running totals) and six reporting views — [`sql/03_analysis_queries.sql`](sql/03_analysis_queries.sql), [`sql/04_views.sql`](sql/04_views.sql) |
-| **DAX** | 44 measures and 11 calculated columns: time intelligence, ranking, status banding and a least-squares trend — [`powerbi/DAX/`](powerbi/DAX/) |
-| **Forecasting** | Seasonal linear-trend projection with a residual-based range, compared year-on-year so seasonality is not misread as decline — [`python/build_kpis.py`](python/build_kpis.py) |
-| **Automated insights** | A written executive briefing generated from the KPI tables in Markdown and print-ready HTML — [`python/generate_insights.py`](python/generate_insights.py) |
-| **Analytical judgement** | Data-quality buckets excluded from rankings; saturated metrics flagged rather than presented as findings — [`reports/executive_insights.md`](reports/executive_insights.md) |
-| **BI delivery and design** | Six-page report on a documented design system: theme, per-visual layout, synced slicers, bookmarks, drill-through, tooltips — [`powerbi/POWERBI_BUILD_GUIDE.md`](powerbi/POWERBI_BUILD_GUIDE.md) |
-
-## Resume description
-
-> Built an end-to-end Business Intelligence solution (Python, SQL Server,
-> Power BI): a star-schema data warehouse, an ETL pipeline that cleaned and
-> validated ~20K transactional records, and a governed KPI layer implemented
-> identically in Python, T-SQL and DAX from a single written definition.
-> Authored the complete Power BI implementation for a six-page executive
-> dashboard — Power Query M ingestion, the data model, 44 DAX measures, a
-> report theme and per-visual layout — covering drill-through, synced
-> filtering and a six-month seasonal revenue forecast, with every page
-> rendered from live KPI output so the design is verifiable against real
-> numbers. Automated the reporting cycle with an executive insights briefing
-> generated directly from the KPI tables. Diagnosed and fixed a dimension-grain defect that had
-> split one region into three and understated the leading region's revenue by
-> 2.5x, and built reconciliation checks so every KPI table ties to the same
-> totals.
+- FADA publishes all-India figures only, with no OEM-by-state split, so the market layer cannot show performance in
+  a specific state. A dealer would overlay its own showroom data.
+- Eight months of data (Feb–Sep 2026), compared year on year with the same months to avoid seasonal distortion.
+- The dealership and executive-dashboard layers use simulated and synthetic data and make no claim about any real
+  company's performance.
 
 ## License
 
-MIT — see `LICENSE`.
+MIT. See `LICENSE`. FADA data remains the property of its publisher and is used here for analysis with attribution.

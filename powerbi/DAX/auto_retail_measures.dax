@@ -1,0 +1,76 @@
+// ============================================================
+// auto_retail_measures.dax
+// Measures for the Auto Retail Market page (REAL FADA data).
+//
+// Tables (Get Data > Text/CSV from data/external/):
+//   FactOemRetail      <- fada_oem_retail_2026.csv
+//   DimPortfolioBrand  <- enter manually (Home > Enter data), two columns:
+//                         oem | brand
+//                         TOYOTA KIRLOSKAR MOTOR PVT LTD | Toyota
+//                         HONDA CARS INDIA LTD           | Honda Cars
+//                         JSW MG MOTOR INDIA PVT LTD     | MG Motor
+//                         MERCEDES-BENZ GROUP            | Mercedes-Benz
+//                         ATHER ENERGY LTD               | Ather
+//   SegmentEV          <- fada_ev_share_2026.csv
+//
+// Relationship: DimPortfolioBrand[oem] 1 -> * FactOemRetail[oem]
+// Create the measures in FactOemRetail. Python equivalent:
+// python/auto_retail_analysis.py ; SQL equivalent: sql/05_auto_retail_market.sql
+// ============================================================
+
+// ---------- Volume ----------
+// Format: Whole number, thousands separator
+
+Retail Units = SUM ( FactOemRetail[units_2026] )
+
+Retail Units LY = SUM ( FactOemRetail[units_2025] )
+
+// Format: Percentage, 1 decimal
+Retail Growth YoY % =
+DIVIDE ( [Retail Units] - [Retail Units LY], [Retail Units LY] )
+
+// ---------- Market share ----------
+// The segment total ignores any OEM/brand filter but keeps month and segment.
+
+Segment Units =
+CALCULATE ( [Retail Units], REMOVEFILTERS ( FactOemRetail[oem] ), REMOVEFILTERS ( DimPortfolioBrand ) )
+
+Segment Units LY =
+CALCULATE ( [Retail Units LY], REMOVEFILTERS ( FactOemRetail[oem] ), REMOVEFILTERS ( DimPortfolioBrand ) )
+
+// Format: Percentage, 2 decimals
+Market Share % = DIVIDE ( [Retail Units], [Segment Units] )
+
+Market Share LY % = DIVIDE ( [Retail Units LY], [Segment Units LY] )
+
+// Format: Whole number, "+0;-0" - basis points
+Share Change bps = ( [Market Share %] - [Market Share LY %] ) * 10000
+
+Segment Growth YoY % =
+DIVIDE ( [Segment Units] - [Segment Units LY], [Segment Units LY] )
+
+// Format: "+0.0;-0.0" - percentage points
+Growth vs Market pts = ( [Retail Growth YoY %] - [Segment Growth YoY %] ) * 100
+
+// Units the selection would have retailed had it held last year's share.
+// Negative = units lost to share decline.
+Units vs Held Share =
+[Retail Units] - ROUND ( [Market Share LY %] * [Segment Units], 0 )
+
+// ---------- Portfolio flag (for highlight colouring) ----------
+Is Portfolio Brand =
+IF ( NOT ISBLANK ( SELECTEDVALUE ( DimPortfolioBrand[brand] ) ), 1, 0 )
+
+// Conditional-format rule for bars: blue for portfolio brands, gray for others.
+Bar Colour =
+IF ( [Is Portfolio Brand] = 1, "#2a78d6", "#b9b8b3" )
+
+// ---------- Verdict text for a card/table ----------
+Share Verdict =
+IF ( [Growth vs Market pts] >= 0, "Outgrowing market", "Losing share" )
+
+// ---------- EV (from SegmentEV) ----------
+// Format: Percentage, 2 decimals - divide by 100 because the CSV stores percent values
+EV Share % = DIVIDE ( AVERAGE ( SegmentEV[ev_share_2026_pct] ), 100 )
+
+EV Share LY % = DIVIDE ( AVERAGE ( SegmentEV[ev_share_2025_pct] ), 100 )
