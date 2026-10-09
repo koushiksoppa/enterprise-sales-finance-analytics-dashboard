@@ -1,0 +1,21 @@
+showroom,age_bucket,units,stock_value_inr,holding_cost_to_date_inr
+Toyota showroom,0-30 days,36,50400000,260960
+Toyota showroom,31-60 days,21,29400000,580720
+Toyota showroom,61-90 days,30,42000000,1266720
+Toyota showroom,90+ days,13,18200000,733600
+Honda Cars showroom,0-30 days,15,16500000,91960
+Honda Cars showroom,31-60 days,14,15400000,276760
+Honda Cars showroom,61-90 days,8,8800000,267960
+Honda Cars showroom,90+ days,10,11000000,486640
+MG Motor showroom,0-30 days,17,27200000,203520
+MG Motor showroom,31-60 days,14,22400000,378880
+MG Motor showroom,61-90 days,11,17600000,552960
+MG Motor showroom,90+ days,20,32000000,1385600
+Mercedes-Benz showroom,0-30 days,10,75000000,348000
+Mercedes-Benz showroom,31-60 days,6,45000000,738000
+Mercedes-Benz showroom,61-90 days,0,0,0
+Mercedes-Benz showroom,90+ days,0,0,0
+Ather showroom,0-30 days,129,19350000,43440
+Ather showroom,31-60 days,0,0,0
+Ather showroom,61-90 days,0,0,0
+Ather showroom,90+ days,0,0,0
